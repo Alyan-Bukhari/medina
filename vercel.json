@@ -1,0 +1,71 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
+    },
+    {
+      "source": "/robots.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "madinaheights.com" }],
+      "destination": "/madina-heights.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.madinaheights.com" }],
+      "destination": "/madina-heights.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "madinamallandresidency.com" }],
+      "destination": "/madina-mall-and-residency.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.madinamallandresidency.com" }],
+      "destination": "/madina-mall-and-residency.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/projects.html",
+      "has": [{ "type": "query", "key": "series", "value": "madina-heights" }],
+      "destination": "/madina-heights.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/project.html",
+      "has": [{ "type": "query", "key": "id", "value": "upcoming" }],
+      "destination": "/madina-mall-and-residency.html",
+      "statusCode": 301
+    }
+  ],
+  "rewrites": [
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "1" }], "destination": "/project-1.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "2" }], "destination": "/project-2.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "3" }], "destination": "/project-3.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "4" }], "destination": "/project-4.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "5" }], "destination": "/project-5.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "6" }], "destination": "/project-6.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "7" }], "destination": "/project-7.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "8" }], "destination": "/project-8.html" },
+    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "upcoming" }], "destination": "/project-upcoming.html" }
+  ]
+}

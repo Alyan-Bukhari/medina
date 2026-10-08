@@ -1,0 +1,589 @@
+@import "tailwindcss";
+
+@source "../components/**/*.{ts,tsx}";
+@source "./**/*.{ts,tsx}";
+
+@theme {
+  --font-sans: "General Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Palatino, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --color-background: #f2e6d6;
+  --color-foreground: #1c1512;
+  --color-card: #1c1512;
+  --color-card-foreground: #fbf6ee;
+  --color-primary: #af522a;
+  --color-primary-foreground: #fbf6ee;
+  --color-secondary: #452d2a;
+  --color-secondary-foreground: #fbf6ee;
+  --color-muted: #d4c4b0;
+  --color-muted-foreground: #6e5c55;
+  --color-border: #8c6239;
+  --color-ring: #af522a;
+  --radius-xl: 0.75rem;
+}
+
+#radial-root {
+  display: block;
+  background: #f2e6d6;
+  color: #1c1512;
+  overflow: hidden;
+  isolation: isolate;
+  width: 100%;
+  max-width: 100%;
+}
+
+.hf {
+  position: relative;
+  background: #f2e6d6;
+  color: #1c1512;
+  width: 100%;
+  max-width: 100%;
+  /* GSAP pin sets overflow:visible on the pin target — force clip anyway */
+  overflow: hidden !important;
+  isolation: isolate;
+  contain: paint;
+  clip-path: inset(0);
+}
+
+.hf-progress {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: color-mix(in srgb, #8c6239 28%, #f2e6d6);
+  pointer-events: none;
+}
+
+.hf-progress i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  background: #af522a;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hf-fraction {
+  position: absolute;
+  z-index: 4;
+  top: max(1.15rem, env(safe-area-inset-top));
+  right: clamp(1.25rem, 4vw, 2.5rem);
+  margin: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #af522a;
+  pointer-events: none;
+}
+
+.hf-fraction span {
+  color: #8c6239;
+  opacity: 0.7;
+}
+
+.hf-scroller {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden !important;
+  contain: paint;
+  clip-path: inset(0);
+}
+
+.hf.is-hf-native .hf-scroller {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hf.is-hf-native .hf-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.hf-slide {
+  box-sizing: border-box;
+  flex: none;
+  /* JS sets exact px widths; % fallback avoids 100vw scrollbar mismatch */
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.hf-track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  height: 100vh;
+  height: 100dvh;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.hf.is-hf-native .hf-track {
+  transform: none !important;
+}
+
+.hf-slide-project {
+  background: #1c1512;
+  color: #fbf6ee;
+  overflow: hidden;
+  position: relative;
+}
+
+.hf-slide-intro,
+.hf-slide-end {
+  display: grid;
+  grid-template-columns: minmax(18rem, 0.95fr) minmax(20rem, 1.05fr);
+  padding: 0;
+  background: #f2e6d6;
+  overflow: hidden;
+}
+
+.hf-slide-intro .hf-lede,
+.hf-end-copy .hf-lede {
+  margin-top: 1.35rem;
+}
+
+.hf-end-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: calc(22vh + env(safe-area-inset-top)) clamp(1.5rem, 5vw, 4.5rem) 10vh;
+  min-width: 0;
+}
+
+.hf-end-copy .hf-title {
+  max-width: 11ch;
+}
+
+.hf-end-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin: 0;
+  padding: 1.15rem 0 0;
+  list-style: none;
+  border-top: 1px solid color-mix(in srgb, #8c6239 38%, #f2e6d6);
+}
+
+.hf-end-stats b {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #af522a;
+}
+
+.hf-end-stats span {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, #1c1512 48%, #f2e6d6);
+}
+
+.hf-end-aside {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+  background: #1c1512;
+}
+
+.hf-end-aside img.hf-end-hero {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 45%;
+}
+
+.hf-end-inset {
+  position: absolute;
+  z-index: 1;
+  top: max(4.75rem, calc(env(safe-area-inset-top) + 3.5rem));
+  right: clamp(1rem, 3vw, 1.75rem);
+  width: min(36%, 13.5rem);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 40%;
+  border: 1px solid #8c6239;
+  box-shadow: 0 22px 48px rgba(28, 21, 18, 0.42);
+}
+
+.hf-end-aside::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 21, 18, 0.04) 0%,
+    rgba(28, 21, 18, 0.08) 48%,
+    rgba(28, 21, 18, 0.48) 100%
+  );
+  pointer-events: none;
+}
+
+.hf-end-card {
+  position: absolute;
+  z-index: 1;
+  left: clamp(1rem, 3vw, 1.75rem);
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  padding: 1.35rem 1.45rem 1.25rem;
+  background: #fbf6ee;
+  color: #1c1512;
+  border: 1px solid #8c6239;
+}
+
+.hf-end-card .hf-kicker {
+  margin-bottom: 0.45rem;
+}
+
+.hf-end-card h3 {
+  margin: 0 0 1rem;
+  font-family: Fraunces, "Iowan Old Style", Palatino, serif;
+  font-size: clamp(1.2rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.hf-end-card dl {
+  margin: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.hf-end-card dl div {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+}
+
+.hf-end-card dt {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c6239;
+}
+
+.hf-end-card dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.3;
+}
+
+.hf-end-card dd a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.hf-end-card dd a:hover {
+  color: #af522a;
+  border-bottom-color: #af522a;
+}
+
+.hf-end-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 1.1rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #af522a;
+  border-bottom: 1px solid #8c6239;
+  padding-bottom: 0.15rem;
+  cursor: pointer;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.hf-end-wa:hover {
+  color: #1c1512;
+  border-bottom-color: #1c1512;
+}
+
+.hf-kicker {
+  margin: 0 0 1rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8c6239;
+}
+
+.hf-title {
+  margin: 0;
+  max-width: 14ch;
+  font-family: Fraunces, "Iowan Old Style", Palatino, serif;
+  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  font-weight: 300;
+  font-optical-sizing: auto;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: #1c1512;
+}
+
+.hf-title em {
+  font-style: italic;
+  font-weight: 300;
+  text-transform: none;
+}
+
+.hf-lede {
+  margin: 1.35rem 0 0;
+  max-width: 36ch;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, #1c1512 58%, #f2e6d6);
+}
+
+.hf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0;
+}
+
+.hf-hint {
+  margin: 0;
+  padding-top: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8c6239;
+}
+
+.hf-visual {
+  flex: 1 1 auto;
+  position: relative;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #1c1512;
+  isolation: isolate;
+  contain: paint;
+}
+
+.hf-visual img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.hf-end-aside img.hf-end-hero,
+.hf-end-inset {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Soft full-bleed wash behind portrait shots */
+.hf-visual img.hf-visual-fill {
+  position: absolute !important;
+  inset: 0 !important;
+  box-sizing: border-box;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  filter: blur(28px) saturate(1.05) brightness(0.55);
+  transform: scale(1.12);
+  transform-origin: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hf-visual img:not(.hf-visual-fill) {
+  position: absolute !important;
+  inset: 0 !important;
+  box-sizing: border-box;
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* Portrait renders + landscape frame: contain avoids over-zoom crop */
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: transparent;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+.hf-meta {
+  flex: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem 1.5rem;
+  align-items: end;
+  padding: 1.15rem 5vw max(1.6rem, env(safe-area-inset-bottom));
+  border-top: 1px solid color-mix(in srgb, #8c6239 42%, #1c1512);
+  background: #1c1512;
+}
+
+.hf-index {
+  margin: 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #af522a;
+}
+
+.hf-meta-copy h3 {
+  margin: 0;
+  font-family: Fraunces, "Iowan Old Style", Palatino, serif;
+  font-size: clamp(1.35rem, 3.2vw, 2.1rem);
+  font-weight: 500;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.hf-status {
+  margin: 0.35rem 0 0;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, #fbf6ee 55%, #1c1512);
+}
+
+.hf-status.is-reserved {
+  color: #8c6239;
+}
+
+.hf-status.is-soon {
+  color: #af522a;
+}
+
+.hf-more {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #fbf6ee;
+  border-bottom: 1px solid #8c6239;
+  padding-bottom: 0.15rem;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hf-more:hover {
+  color: #af522a;
+  border-color: #af522a;
+}
+
+.hf-static {
+  padding: 5rem clamp(1.25rem, 4vw, 2.5rem) 4rem;
+}
+
+.hf-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin: 2.5rem 0 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+}
+
+.hf-grid-card {
+  background: #1c1512;
+  color: #fbf6ee;
+}
+
+.hf-grid-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center center;
+  background: #1c1512;
+}
+
+.hf-grid-card span {
+  display: block;
+  padding: 0.85rem 1rem 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 860px) {
+  .hf-meta {
+    grid-template-columns: auto 1fr;
+  }
+
+  .hf-more {
+    grid-column: 1 / -1;
+  }
+
+  .hf-slide-intro,
+  .hf-slide-end {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr);
+  }
+
+  .hf-visual img:not(.hf-visual-fill) {
+    object-position: center 40%;
+  }
+
+  .hf-end-copy {
+    padding: calc(4.5rem + env(safe-area-inset-top)) 1.35rem 1.15rem;
+    gap: 1.15rem;
+  }
+
+  .hf-end-copy .hf-title {
+    font-size: clamp(2.1rem, 11vw, 3.2rem);
+  }
+
+  .hf-end-stats {
+    display: none;
+  }
+
+  .hf-end-inset {
+    display: none;
+  }
+
+  .hf-end-card {
+    padding: 1rem 1.1rem 1rem;
+  }
+
+  .hf-end-card h3 {
+    margin-bottom: 0.7rem;
+  }
+
+  .hf-end-card dl div {
+    grid-template-columns: 3.6rem 1fr;
+  }
+}

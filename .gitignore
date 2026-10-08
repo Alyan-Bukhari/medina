@@ -1,0 +1,12 @@
+node_modules
+dist
+.DS_Store
+*.log
+.env
+.env.local
+.env*.local
+.vercel
+.cursor
+reference
+MMR Data (Images)
+V3.mp4
