@@ -1,9 +1,9 @@
 (function () {
   const FALLBACK =
-    "I can only answer questions about RealTek Developers and our projects. Try asking about a specific project, our payment plans, or how to reach us — or call us directly at 0312 4455477.";
+    "I can only answer questions about Madina Developer and our projects. Try asking about a specific project, our payment plans, or how to reach us — or call us directly at 0312 4455477.";
 
   const GREETING =
-    "Hi! I'm the RealTek assistant. Ask me about our projects, payment plans, or how to get in touch.";
+    "Hi! I'm the Madina Developer assistant. Ask me about our projects, payment plans, or how to get in touch.";
 
   function $(sel, root) {
     return (root || document).querySelector(sel);

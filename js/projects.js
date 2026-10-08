@@ -1,5 +1,5 @@
 /**
- * RealTek Developers — project data
+ * Madina Developer — project data
  * Sourced from the live site (realtekdevelopers.com/js/app.js) and provided brief.
  * Do not invent additional stats.
  */
@@ -171,7 +171,7 @@
           {
             title: "Sold out",
             note: "Completed 2021",
-            body: "La Monte Vista is fully sold. Call or WhatsApp for related RealTek inventory still booking."
+            body: "La Monte Vista is fully sold. Call or WhatsApp for related Madina inventory still booking."
           }
         ],
         faqs: [
@@ -184,7 +184,7 @@
             a: "166-B Commercial, Bahria Town, Lahore."
           },
           {
-            q: "How do I contact RealTek?",
+            q: "How do I contact Madina Developer?",
             a: "WhatsApp or call 0312 4455477, or email info@realtek.pk."
           }
         ],
@@ -737,7 +737,7 @@
           },
           {
             q: "How do I book?",
-            a: "WhatsApp 0312 4455477 or call the same number. RealTek will send availability and the written schedule."
+            a: "WhatsApp 0312 4455477 or call the same number. Madina will send availability and the written schedule."
           }
         ],
         mapsQuery: "Madina Mall and Residency Bahria Town Lahore"
@@ -756,7 +756,7 @@
 
   function whatsappHref(message) {
     const text =
-      message || "Hi, I'm interested in a RealTek Developers project in Lahore.";
+      message || "Hi, I'm interested in a Madina Developer project in Lahore.";
     return "https://wa.me/923124455477?text=" + encodeURIComponent(text);
   }
 

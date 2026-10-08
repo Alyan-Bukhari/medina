@@ -26,7 +26,7 @@
     "madina-heights": {
       title: "Madina Heights | Real Estate in Lahore",
       description:
-        "Madina Heights by RealTek Developers — commercial and residential towers across Bahria Town and Lahore. View every phase, location, and booking status.",
+        "Madina Heights by Madina Developer — commercial and residential towers across Bahria Town and Lahore. View every phase, location, and booking status.",
       path: "/madina-heights.html",
       image: "images/madina-heights-4/elevation/elevation-01.jpg"
     }

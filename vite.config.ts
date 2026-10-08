@@ -3,7 +3,7 @@ import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, loadEnv } from "vite";
-import { FALLBACK, answerChat, clientIp, readJsonBody } from "./lib/realtek-chat.js";
+import { FALLBACK, answerChat, clientIp, readJsonBody } from "./lib/madina-chat.js";
 import {
   SITE,
   STATIC_PAGES,
@@ -20,7 +20,7 @@ import {
 
 function groqChatPlugin() {
   return {
-    name: "realtek-groq-chat",
+    name: "madina-groq-chat",
     configureServer(server) {
       const env = loadEnv(server.config.mode, process.cwd(), "");
       server.middlewares.use(async (req, res, next) => {
@@ -240,14 +240,14 @@ function copyStatic() {
         const pagePath = "/project-" + p.id + ".html";
         const pageUrl = absUrl(pagePath);
         let html = template;
-        html = html.replace(/<title>[\s\S]*?<\/title>/, "<title>" + esc(p.name) + " | RealTek Developers</title>");
+        html = html.replace(/<title>[\s\S]*?<\/title>/, "<title>" + esc(p.name) + " | Madina Developer</title>");
         html = html.replace(
           /<meta name="description" content="[^"]*">/,
           '<meta name="description" content="' + esc(p.overview) + '">'
         );
         html = html.replace(
           /<meta property="og:title" content="[^"]*">/,
-          '<meta property="og:title" content="' + esc(p.name) + ' | RealTek Developers">'
+          '<meta property="og:title" content="' + esc(p.name) + ' | Madina Developer">'
         );
         html = html.replace(
           /<meta property="og:description" content="[^"]*">/,
@@ -257,7 +257,7 @@ function copyStatic() {
           html,
           {
             path: pagePath,
-            title: p.name + " | RealTek Developers",
+            title: p.name + " | Madina Developer",
             description: p.overview,
             image: p.image,
             type: "website",

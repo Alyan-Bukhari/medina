@@ -128,7 +128,7 @@
         {
           id: "typical",
           name: "Typical floor",
-          desc: "Sample floor plate. Ask RealTek for the issued drawings for " + project.name + ".",
+          desc: "Sample floor plate. Ask Madina for the issued drawings for " + project.name + ".",
           units: "On request",
           sizes: "On request",
           rate: null,
@@ -267,7 +267,7 @@
         (project.name || "this project") +
         " is sold out — please share archive media or current booking options (Madina Mall & Residency / Madina Heights 4 & 5)."
       : "Hi, I'd like site footage and further details for " +
-        (project.name || "a RealTek project") +
+        (project.name || "a Madina project") +
         ".";
     const wa =
       global.RT && typeof RT.whatsappHref === "function"
@@ -867,7 +867,7 @@
     return (
       navHtml(hasCommercial, showPayment, showVideos) +
       (sample && showPayment
-        ? '<p class="dossier-banner wrap">Sample figures for this page — not a published RealTek schedule. WhatsApp for issued drawings.</p>'
+        ? '<p class="dossier-banner wrap">Sample figures for this page — not a published Madina schedule. WhatsApp for issued drawings.</p>'
         : "") +
       '<section class="dossier-block" id="overview">' +
       '<div class="wrap dossier-split">' +
@@ -896,7 +896,7 @@
       "</h2>" +
       (sample
         ? "<p class=\"dossier-note\">Dummy layouts for this project — WhatsApp for issued drawings.</p>"
-        : "<p class=\"dossier-note\">Photos from the delivered building. Ask RealTek for related inventory still booking.</p>") +
+        : "<p class=\"dossier-note\">Photos from the delivered building. Ask Madina for related inventory still booking.</p>") +
       '<div class="unit-grid">' +
       d.units.map(function (u) {
         return unitCard(u, showPayment ? rate : 0, months, sample, showPayment);

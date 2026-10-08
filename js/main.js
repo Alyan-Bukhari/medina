@@ -622,7 +622,7 @@
       const email = (form.querySelector('input[type="email"]') || {}).value || "";
       const note = form.parentElement.querySelector(".newsletter-note");
       const subject = encodeURIComponent("Website enquiry");
-      const body = encodeURIComponent("Please add this address to the RealTek list: " + email);
+      const body = encodeURIComponent("Please add this address to the Madina list: " + email);
       window.location.href = "mailto:info@realtek.pk?subject=" + subject + "&body=" + body;
       if (note) note.textContent = "Your email app will open to complete this with info@realtek.pk.";
     });
@@ -738,7 +738,7 @@
 
   function initIntroSplash(onDone) {
     const splash = $("#intro-splash");
-    const STORAGE_KEY = "realtek-intro-seen";
+    const STORAGE_KEY = "madina-intro-seen";
     let finished = false;
     let exitTimer;
     let doneTimer;

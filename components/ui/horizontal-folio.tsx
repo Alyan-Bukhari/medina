@@ -379,7 +379,7 @@ export default function HorizontalFolio({
                 </dl>
                 <a
                   className="hf-end-wa"
-                  href="https://wa.me/923124455477?text=Hi%2C%20I%27m%20interested%20in%20a%20RealTek%20project."
+                  href="https://wa.me/923124455477?text=Hi%2C%20I%27m%20interested%20in%20a%20Madina%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                 >

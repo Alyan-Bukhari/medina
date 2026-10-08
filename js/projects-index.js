@@ -6,7 +6,7 @@
     "madina-heights": {
       brandMain: "Madina",
       brandSub: "Heights",
-      title: "Madina Heights | RealTek Developers",
+      title: "Madina Heights | Madina Developer",
       eyebrow: "Madina Heights — The collection",
       headingHtml: "Every Madina Heights development in one <em>place.</em>",
       lead:

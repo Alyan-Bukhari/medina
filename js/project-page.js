@@ -12,7 +12,7 @@
     if (el) el.textContent = value;
   }
 
-  /** Brand lines that replace the RealTek Developers wordmark. */
+  /** Brand lines that replace the Madina Developer wordmark. */
   const PROJECT_BRANDS = {
     "1": {
       main: "La Monte",
@@ -87,7 +87,7 @@
       return;
     }
 
-    document.title = project.name + " | RealTek Developers";
+    document.title = project.name + " | Madina Developer";
     const desc = document.querySelector('meta[name="description"]');
     if (desc) {
       desc.setAttribute(
@@ -97,11 +97,11 @@
           project.location +
           " — " +
           project.status +
-          ". RealTek Developers, Lahore."
+          ". Madina Developer, Lahore."
       );
     }
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", project.name + " | RealTek Developers");
+    if (ogTitle) ogTitle.setAttribute("content", project.name + " | Madina Developer");
     const ogDesc = document.querySelector('meta[property="og:description"]');
     if (ogDesc) ogDesc.setAttribute("content", project.overview || "");
     const ogImg = document.querySelector('meta[property="og:image"]');
