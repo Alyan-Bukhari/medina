@@ -185,7 +185,7 @@
           },
           {
             q: "How do I contact Madina Developer?",
-            a: "WhatsApp or call 0312 4455477, or email info@realtek.pk."
+            a: "WhatsApp or call 0312 4455477, or email madinaheightspvtlimited@gmail.com."
           }
         ],
         mapsQuery: "166-B Commercial Bahria Town Lahore"
@@ -751,7 +751,7 @@
   }
 
   function projectHref(id) {
-    return "project.html?id=" + encodeURIComponent(id);
+    return "/projects/" + {"1": "la-monte-vista", "2": "madina-heights-1", "3": "madina-heights-2", "4": "madina-heights-3", "5": "madina-heights-4", "6": "madina-heights-5", "7": "madina-silver-heights", "8": "madina-homes", "upcoming": "madina-mall-residency"}[id] + "/";
   }
 
   function whatsappHref(message) {

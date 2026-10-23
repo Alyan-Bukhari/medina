@@ -5477,3 +5477,55 @@ body {
     transform: none !important;
   }
 }
+
+/* Accessible, consistent motion and responsive homepage rhythm. */
+html { scroll-padding-top: 100px; }
+:focus-visible { outline: 3px solid #bd9659; outline-offset: 5px; }
+.hero-tagline { max-width: 580px; line-height: 1.65; }
+.hero-actions { gap: 12px; }
+.spotlight-pin { min-height: 0; height: auto; }
+.spotlight-media { min-height: 540px; clip-path: none; }
+.nav-toggle, .btn { min-height: 44px; }
+@media (max-width: 860px) {
+ .hero-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+ .hero-actions .btn { padding: 12px; font-size: 12px; }
+ .hero-lockup { padding-inline: 24px; }
+ .spotlight-media { min-height: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+ *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
+/* Shared content pages and keyboard-accessible project navigation. */
+.content-page { padding-top: 160px; padding-bottom: 100px; }
+.content-page h1 { font-size: clamp(2.3rem,5vw,4.8rem); line-height: 1.1; max-width: 1000px; margin-bottom: 28px; }
+.page-lead { font-size: 1.15rem; line-height: 1.75; max-width: 760px; margin-bottom: 56px; }
+.enquiry-layout { display:grid; grid-template-columns: minmax(0,1.7fr) minmax(0,1fr); gap:64px; }
+.enquiry-form { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:32px; }
+.enquiry-form label { display:grid; gap:10px; font-size:14px; }
+.enquiry-form input,.enquiry-form select,.enquiry-form textarea { width:100%; min-width:0; padding:14px; border:1px solid #998b7c; background:#fffaf3; color:#231b16; font:inherit; border-radius:4px; }
+.enquiry-form .full { grid-column:1/-1; }
+.contact-cards { padding:32px; background:#e8ddce; border-radius:8px; align-self:start; }
+.contact-cards h3 { margin-top:28px; }
+.contact-cards a,.contact-list .value,.footer-col a { overflow-wrap:anywhere; }
+.page-section { margin-top:80px; }
+.project-links,.guide-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:28px; }
+.project-links a,.guide-grid article { padding:28px; border:1px solid #bbad9d; border-radius:6px; }
+.guide-grid p { margin:20px 0; line-height:1.7; }
+.faq { padding:24px 0; border-bottom:1px solid #bbad9d; }
+.faq summary { cursor:pointer; font-size:1.1rem; }
+.faq p { margin-top:16px; max-width:760px; line-height:1.7; }
+.project-menu { position:relative; }
+.project-menu summary { cursor:pointer; padding:14px 0; font-size:12px; text-transform:uppercase; letter-spacing:.08em; }
+.project-menu>div { position:absolute; top:100%; right:0; width:280px; max-height:65vh; overflow:auto; background:#f7f0e6; color:#231b16; padding:12px; box-shadow:0 16px 40px #0003; border-radius:6px; }
+.project-menu a { display:block; padding:12px; }
+.project-menu a:hover,.project-menu a:focus-visible { background:#e8ddce; }
+@media(max-width:860px) {
+ .content-page { padding-top:120px; }
+ .enquiry-layout,.guide-grid,.project-links { grid-template-columns:1fr; gap:24px; }
+ .project-menu>div { position:static; width:100%; box-shadow:none; }
+ .nav.is-open { overflow-y:auto; }
+}
+@media(max-width:480px) { .enquiry-form { grid-template-columns:1fr; } }
+.enquiry-form input.visually-hidden { position:absolute; width:1px; height:1px; padding:0; border:0; overflow:hidden; clip-path:inset(50%); }
+.site-header.is-light .header-cta { color:var(--ink); border-color:currentColor; }
+.enquiry-layout > *, .enquiry-form > * { min-width:0; }

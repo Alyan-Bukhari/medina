@@ -51,9 +51,9 @@
   function initLenis() {
     if (!motionOk() || isMobile() || typeof Lenis === "undefined") return null;
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.65,
       smoothWheel: true,
-      wheelMultiplier: 0.8,
+      wheelMultiplier: 1,
       touchMultiplier: 1,
       autoRaf: false
     });
@@ -96,74 +96,13 @@
   }
 
   function initSplit() {
-    if (typeof SplitType === "undefined" || typeof gsap === "undefined") return;
-    const nodes = $$("[data-split]");
-    if (!nodes.length) return;
-
-    nodes.forEach((el) => {
-      const mode = el.getAttribute("data-split") || "words";
-      const types = mode.indexOf("chars") === 0 ? "lines, chars" : "lines, words";
-      const split = new SplitType(el, { types: types, tagName: "span" });
-      if (split.lines) {
-        split.lines.forEach((line) => line.classList.add("split-line"));
-      }
-      if (split.words) {
-        split.words.forEach((word) => word.classList.add("split-word"));
-      }
-      if (split.chars) {
-        split.chars.forEach((char) => char.classList.add("split-char"));
-      }
-
-      if (!motionOk()) return;
-
-      if (mode === "chars-scrub" && split.chars && split.chars.length) {
-        const section = el.closest(".manifesto") || el;
-        /* Scrub leaves glyphs mid-travel on short mobile scrolls — play once instead */
-        if (isMobile()) {
-          gsap.from(split.chars, {
-            yPercent: 110,
-            duration: 0.85,
-            stagger: { each: 0.02, from: "random" },
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 82%",
-              once: true
-            }
-          });
-        } else {
-          gsap.set(split.chars, { yPercent: 120 });
-          gsap.to(split.chars, {
-            yPercent: 0,
-            ease: "power3.out",
-            stagger: { each: 0.05, from: "random" },
-            scrollTrigger: {
-              trigger: section,
-              start: "top 75%",
-              end: "center 40%",
-              scrub: true
-            }
-          });
-        }
-      } else if (mode === "chars" && split.chars && split.chars.length) {
-        gsap.set(split.chars, { yPercent: 120 });
-        gsap.to(split.chars, {
-          yPercent: 0,
-          duration: 1,
-          stagger: { each: 0.028, from: "random" },
-          ease: "power3.out",
-          delay: 0.18
-        });
-      } else if (split.words && split.words.length) {
-        gsap.from(split.words, {
-          yPercent: 110,
-          opacity: 0,
-          duration: 0.9,
-          stagger: 0.045,
-          ease: "power3.out",
-          delay: 0.15
-        });
-      }
+    // Reveal whole headings once; never hide individual letters during scrolling.
+    if (!motionOk() || typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+    document.querySelectorAll('[data-split]').forEach(el => {
+      gsap.from(el, { y: 20, opacity: 0, duration: .65, ease: 'power2.out',
+        clearProps: 'transform,opacity',
+        scrollTrigger: { trigger: el, start: 'top 92%', once: true } });
     });
   }
 
@@ -356,53 +295,12 @@
   }
 
   function initSlideMask() {
-    const pin = $(".spotlight-pin");
-    const media = $(".spotlight-media");
-    const img = media ? $("img", media) : null;
-    const copy = $(".spotlight-copy");
-    if (!pin || !media) return;
-    if (typeof gsap === "undefined") return;
-
-    if (!motionOk() || isMobile()) {
-      media.style.clipPath = "none";
-      return;
-    }
-
-    const baseWheel = 0.8;
-    const pinnedWheel = 0.42;
-    const setWheel = (mult) => {
-      const lenis = window.RT && window.RT.lenis;
-      if (lenis && lenis.options) lenis.options.wheelMultiplier = mult;
-    };
-
-    /* Longer pin + lagged scrub so trackpad/mouse flicks cannot skip the reveal */
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: pin,
-        start: "top top",
-        end: () => "+=" + Math.round(window.innerHeight * 4.5),
-        pin: true,
-        scrub: 1.25,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-        fastScrollEnd: false,
-        preventOverlaps: true,
-        onToggle(self) {
-          setWheel(self.isActive ? pinnedWheel : baseWheel);
-        },
-        onKill() {
-          setWheel(baseWheel);
-        }
-      }
-    });
-    tl.fromTo(
-      media,
-      { clipPath: "inset(18% 32% 18% 32%)" },
-      { clipPath: "inset(0% 0% 0% 0%)", ease: "none" },
-      0
-    );
-    if (img) tl.fromTo(img, { scale: 1.05 }, { scale: 1.16, ease: "none" }, 0);
-    if (copy) tl.fromTo(copy, { y: 48, opacity: 0.55 }, { y: 0, opacity: 1, ease: "none" }, 0);
+    const media = $('.spotlight-media');
+    if (!media) return;
+    media.style.clipPath = 'none';
+    if (!motionOk() || isMobile() || typeof gsap === 'undefined') return;
+    gsap.fromTo(media, { y: 24 }, { y: 0, duration: .8, ease: 'power2.out',
+      scrollTrigger: { trigger: media, start: 'top 90%', once: true }, clearProps: 'transform' });
   }
 
   function initRail() {
@@ -623,8 +521,8 @@
       const note = form.parentElement.querySelector(".newsletter-note");
       const subject = encodeURIComponent("Website enquiry");
       const body = encodeURIComponent("Please add this address to the Madina list: " + email);
-      window.location.href = "mailto:info@realtek.pk?subject=" + subject + "&body=" + body;
-      if (note) note.textContent = "Your email app will open to complete this with info@realtek.pk.";
+      window.location.href = "mailto:madinaheightspvtlimited@gmail.com?subject=" + subject + "&body=" + body;
+      if (note) note.textContent = "Your email app will open to complete this with madinaheightspvtlimited@gmail.com.";
     });
   }
 
@@ -807,7 +705,9 @@
   document.addEventListener("DOMContentLoaded", () => {
     initLoadBar();
     initHeader();
-    initIntroSplash(() => {
+    document.documentElement.classList.remove("intro-pending");
+    $("#intro-splash")?.remove();
+    (() => {
       const lenis = initLenis();
       window.RT = window.RT || {};
       window.RT.lenis = lenis;
@@ -831,7 +731,7 @@
       initTabs();
       initLightbox();
       initNewsletter();
-    });
+    })();
   });
 
   function initLightbox() {
