@@ -6,66 +6,488 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml; charset=utf-8" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
     },
     {
       "source": "/robots.txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
     }
   ],
   "redirects": [
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "madinaheights.com" }],
-      "destination": "/madina-heights.html",
-      "statusCode": 301
+      "has": [
+        {
+          "type": "host",
+          "value": "madinaheights.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/projects/madina-heights/",
+      "statusCode": 308
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "www.madinaheights.com" }],
-      "destination": "/madina-heights.html",
-      "statusCode": 301
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinaheights.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/projects/madina-heights/",
+      "statusCode": 308
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "madinamallandresidency.com" }],
-      "destination": "/madina-mall-and-residency.html",
-      "statusCode": 301
+      "has": [
+        {
+          "type": "host",
+          "value": "madinamallandresidency.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/projects/madina-mall-residency/",
+      "statusCode": 308
     },
     {
       "source": "/",
-      "has": [{ "type": "host", "value": "www.madinamallandresidency.com" }],
-      "destination": "/madina-mall-and-residency.html",
-      "statusCode": 301
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinamallandresidency.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/projects/madina-mall-residency/",
+      "statusCode": 308
     },
     {
-      "source": "/projects.html",
-      "has": [{ "type": "query", "key": "series", "value": "madina-heights" }],
-      "destination": "/madina-heights.html",
-      "statusCode": 301
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinadevelopers.pk"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinadevelopers.pk"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinadevelopers.com.pk"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinadevelopers.com.pk"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinaheights.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinaheights.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinamallandresidency.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinamallandresidency.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinadeveloper.com"
+        }
+      ],
+      "destination": "https://www.madinadeveloper.com/:path*",
+      "statusCode": 308
     },
     {
       "source": "/project.html",
-      "has": [{ "type": "query", "key": "id", "value": "upcoming" }],
-      "destination": "/madina-mall-and-residency.html",
-      "statusCode": 301
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "1"
+        }
+      ],
+      "destination": "/projects/la-monte-vista/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "2"
+        }
+      ],
+      "destination": "/projects/madina-heights-1/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "3"
+        }
+      ],
+      "destination": "/projects/madina-heights-2/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "4"
+        }
+      ],
+      "destination": "/projects/madina-heights-3/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "5"
+        }
+      ],
+      "destination": "/projects/madina-heights-4/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "6"
+        }
+      ],
+      "destination": "/projects/madina-heights-5/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "7"
+        }
+      ],
+      "destination": "/projects/madina-silver-heights/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "8"
+        }
+      ],
+      "destination": "/projects/madina-homes/",
+      "statusCode": 308
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "upcoming"
+        }
+      ],
+      "destination": "/projects/madina-mall-residency/",
+      "statusCode": 308
+    },
+    {
+      "source": "/projects.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "series",
+          "value": "madina-heights"
+        }
+      ],
+      "destination": "/projects/madina-heights/",
+      "statusCode": 308
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/ceo.html",
+      "destination": "/about-us/",
+      "statusCode": 308
+    },
+    {
+      "source": "/projects.html",
+      "destination": "/projects/",
+      "statusCode": 308
+    },
+    {
+      "source": "/madina-heights.html",
+      "destination": "/projects/madina-heights/",
+      "statusCode": 308
+    },
+    {
+      "source": "/madina-mall-and-residency.html",
+      "destination": "/projects/madina-mall-residency/",
+      "statusCode": 308
     }
   ],
   "rewrites": [
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "1" }], "destination": "/project-1.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "2" }], "destination": "/project-2.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "3" }], "destination": "/project-3.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "4" }], "destination": "/project-4.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "5" }], "destination": "/project-5.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "6" }], "destination": "/project-6.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "7" }], "destination": "/project-7.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "8" }], "destination": "/project-8.html" },
-    { "source": "/project.html", "has": [{ "type": "query", "key": "id", "value": "upcoming" }], "destination": "/project-upcoming.html" }
+    {
+      "source": "/about-us/",
+      "destination": "/ceo.html"
+    },
+    {
+      "source": "/projects/",
+      "destination": "/projects.html"
+    },
+    {
+      "source": "/projects/madina-heights/",
+      "destination": "/madina-heights.html"
+    },
+    {
+      "source": "/projects/la-monte-vista/",
+      "destination": "/project-1.html"
+    },
+    {
+      "source": "/projects/madina-heights-1/",
+      "destination": "/project-2.html"
+    },
+    {
+      "source": "/projects/madina-heights-2/",
+      "destination": "/project-3.html"
+    },
+    {
+      "source": "/projects/madina-heights-3/",
+      "destination": "/project-4.html"
+    },
+    {
+      "source": "/projects/madina-heights-4/",
+      "destination": "/project-5.html"
+    },
+    {
+      "source": "/projects/madina-heights-5/",
+      "destination": "/project-6.html"
+    },
+    {
+      "source": "/projects/madina-silver-heights/",
+      "destination": "/project-7.html"
+    },
+    {
+      "source": "/projects/madina-homes/",
+      "destination": "/project-8.html"
+    },
+    {
+      "source": "/projects/madina-mall-residency/",
+      "destination": "/project-upcoming.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "1"
+        }
+      ],
+      "destination": "/project-1.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "2"
+        }
+      ],
+      "destination": "/project-2.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "3"
+        }
+      ],
+      "destination": "/project-3.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "4"
+        }
+      ],
+      "destination": "/project-4.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "5"
+        }
+      ],
+      "destination": "/project-5.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "6"
+        }
+      ],
+      "destination": "/project-6.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "7"
+        }
+      ],
+      "destination": "/project-7.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "8"
+        }
+      ],
+      "destination": "/project-8.html"
+    },
+    {
+      "source": "/project.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "upcoming"
+        }
+      ],
+      "destination": "/project-upcoming.html"
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact-us.html"
+    },
+    {
+      "source": "/blogs/",
+      "destination": "/blogs.html"
+    },
+    {
+      "source": "/virtual-tour/",
+      "destination": "/virtual-tour.html"
+    },
+    {
+      "source": "/3d-models/",
+      "destination": "/3d-models.html"
+    }
   ]
 }

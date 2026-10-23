@@ -2,7 +2,7 @@
  * Runtime SEO — domain-aware canonical URLs and series/project meta.
  */
 (function (global) {
-  const PRIMARY = "https://realtekdevelopers.com";
+  const PRIMARY = "https://www.madinadeveloper.com";
   const DOMAINS = {
     "madinaheights.com": {
       canonicalRoot: "https://madinaheights.com/",
@@ -14,11 +14,11 @@
     },
     "madinamallandresidency.com": {
       canonicalRoot: "https://madinamallandresidency.com/",
-      projectPath: "/madina-mall-and-residency.html"
+      projectPath: "/projects/madina-mall-residency/"
     },
     "www.madinamallandresidency.com": {
       canonicalRoot: "https://madinamallandresidency.com/",
-      projectPath: "/madina-mall-and-residency.html"
+      projectPath: "/projects/madina-mall-residency/"
     }
   };
 
@@ -27,7 +27,7 @@
       title: "Madina Heights | Real Estate in Lahore",
       description:
         "Madina Heights by Madina Developer — commercial and residential towers across Bahria Town and Lahore. View every phase, location, and booking status.",
-      path: "/madina-heights.html",
+      path: "/projects/madina-heights/",
       image: "images/madina-heights-4/elevation/elevation-01.jpg"
     }
   };
@@ -99,7 +99,7 @@
 
     if (seriesKey && SERIES_META[seriesKey]) {
       const meta = SERIES_META[seriesKey];
-      const onHeightsDomain = h.includes("madinaheights.com");
+      const onHeightsDomain = false;
       const canonical = onHeightsDomain
         ? DOMAINS[h].canonicalRoot.replace(/\/$/, "") + "/"
         : absPrimary(meta.path);
@@ -114,10 +114,10 @@
           "Madina Mall & Residency — mixed-use mall and residences in Bahria Town Lahore. Studio to three-bed homes, premium retail, 36-month Sharia-compliant plan.",
         image: "images/madina-mall-featured.jpg"
       };
-      const onMallDomain = h.includes("madinamallandresidency.com");
+      const onMallDomain = false;
       const canonical = onMallDomain
         ? DOMAINS[h].canonicalRoot.replace(/\/$/, "") + "/"
-        : absPrimary("/madina-mall-and-residency.html");
+        : absPrimary("/projects/madina-mall-residency/");
       applyPageMeta(meta, canonical);
       return;
     }

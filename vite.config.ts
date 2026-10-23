@@ -6,6 +6,7 @@ import { defineConfig, loadEnv } from "vite";
 import { FALLBACK, answerChat, clientIp, readJsonBody } from "./lib/madina-chat.js";
 import {
   SITE,
+  projectPath,
   STATIC_PAGES,
   SERIES_PAGES,
   absUrl,
@@ -193,7 +194,7 @@ function copyStatic() {
         const jsonLd = page.file === "index.html" ? orgJsonLd() : null;
         html = injectSeo(html, page, jsonLd);
         fs.writeFileSync(filePath, html);
-        sitemapUrls.push({
+        if (page.file !== "project.html") sitemapUrls.push({
           loc: absUrl(page.path),
           priority: page.file === "index.html" ? "1.0" : "0.8",
           changefreq: page.file === "index.html" ? "weekly" : "monthly"
@@ -237,7 +238,7 @@ function copyStatic() {
       const template = fs.readFileSync(templatePath, "utf8");
 
       for (const p of PROJECT_PAGES) {
-        const pagePath = "/project-" + p.id + ".html";
+        const pagePath = projectPath(p.id);
         const pageUrl = absUrl(pagePath);
         let html = template;
         html = html.replace(/<title>[\s\S]*?<\/title>/, "<title>" + esc(p.name) + " | Madina Developer</title>");
@@ -319,6 +320,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "index.html"),
+"contact-us": path.resolve(__dirname, "contact-us.html"),
+"blogs": path.resolve(__dirname, "blogs.html"),
+"virtual-tour": path.resolve(__dirname, "virtual-tour.html"),
+"3d-models": path.resolve(__dirname, "3d-models.html"),
+
         ceo: path.resolve(__dirname, "ceo.html"),
         project: path.resolve(__dirname, "project.html"),
         projects: path.resolve(__dirname, "projects.html")
