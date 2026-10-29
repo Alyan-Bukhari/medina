@@ -17,13 +17,13 @@
     "1": {
       main: "La Monte",
       sub: "Vista",
-      href: "project.html?id=1",
+      href: "/projects/la-monte-vista/",
       activeMatch: (href) => /project\.html\?id=1(?:$|&)/.test(href)
     },
     "8": {
       main: "Madina",
       sub: "Homes",
-      href: "project.html?id=8",
+      href: "/projects/madina-homes/",
       activeMatch: (href) => /project\.html\?id=8(?:$|&)/.test(href)
     }
   };
@@ -313,7 +313,7 @@
       "</h2><p>" +
       escapeHtml(next.overview.split(". ")[0] + ".") +
       '</p><a class="btn btn-light" href="' +
-      (RT.projectHref ? RT.projectHref(next.id) : "project.html?id=upcoming") +
+      (RT.projectHref ? RT.projectHref(next.id) : "/projects/madina-mall-residency/") +
       '">See Madina Mall &amp; Residency</a>';
   }
 

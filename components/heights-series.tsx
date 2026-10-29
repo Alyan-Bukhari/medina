@@ -27,7 +27,7 @@ const ITEMS: SeriesItem[] = [
     description:
       "Mixed-use mall and residences — studio to three-bed, premium retail, owned on a 36-month plan.",
     image: "/images/madina-mall-featured.jpg",
-    href: "project.html?id=upcoming",
+    href: "/projects/madina-mall-residency/",
     badge: "Live",
     badgeKind: "live",
   },
@@ -39,7 +39,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Mixed Use · Bahria Town",
     description: "Twelve-month plan, 35 apartments — handed over 2025 in 166B Commercial.",
     image: "/images/project-7.jpg",
-    href: "project.html?id=7",
+    href: "/projects/madina-silver-heights/",
     badge: "Sold Out",
     badgeKind: "sold",
   },
@@ -51,7 +51,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Commercial + Residential · Bahria Town",
     description: "Our largest Heights building — 84 apartments and 43 shops, still booking through 2026.",
     image: "/images/madina-heights-5/commercial-view.jpeg",
-    href: "project.html?id=6",
+    href: "/projects/madina-heights-5/",
     badge: "80% Sold",
     badgeKind: "reserved",
   },
@@ -63,7 +63,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Commercial + Residential · Safari Villas",
     description: "Two plots at Umer block — 54 apartments and 27 shops, still booking on a 30-month plan.",
     image: "/images/madina-heights-4/elevation/elevation-01.jpg",
-    href: "project.html?id=5",
+    href: "/projects/madina-heights-4/",
     badge: "80% Sold",
     badgeKind: "reserved",
   },
@@ -75,7 +75,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Commercial + Residential · Safari Villas",
     description: "Umer block, next to Safari Villas — 22 apartments and two commercial halls, sold out.",
     image: "/images/project-4.jpg",
-    href: "project.html?id=4",
+    href: "/projects/madina-heights-3/",
     badge: "Sold Out",
     badgeKind: "sold",
   },
@@ -87,7 +87,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Commercial + Apartments · Sector C",
     description: "Sector-C side commercial — 18 apartments and six halls, completed 2023.",
     image: "/images/madina-heights-2/photo-06.jpeg",
-    href: "project.html?id=3",
+    href: "/projects/madina-heights-2/",
     badge: "Sold Out",
     badgeKind: "sold",
   },
@@ -99,7 +99,7 @@ const ITEMS: SeriesItem[] = [
     meta: "Commercial + Apartments · Canal Bank Road",
     description: "Main Canal Bank Road — 22 apartments and two commercial halls, handed over in 2021.",
     image: "/images/project-2.jpg",
-    href: "project.html?id=2",
+    href: "/projects/madina-heights-1/",
     badge: "Sold Out",
     badgeKind: "sold",
   },
@@ -179,7 +179,7 @@ export function HeightsSeries() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                href="project.html?id=upcoming"
+                href="/projects/madina-mall-residency/"
                 className="inline-flex items-center gap-2 rounded-full bg-[#af522a] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[#fbf6ee] transition hover:bg-[#c45f32]"
               >
                 Explore MMR

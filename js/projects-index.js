@@ -44,7 +44,7 @@
             description: series.lead,
             image: "images/madina-mall/videos/drone-poster.jpg"
           },
-          window.location.origin + "/madina-heights.html"
+          "https://www.madinadeveloper.com/projects/madina-heights/"
         );
       }
       cards.forEach((card) => {

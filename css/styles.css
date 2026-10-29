@@ -5529,3 +5529,6 @@ html { scroll-padding-top: 100px; }
 .enquiry-form input.visually-hidden { position:absolute; width:1px; height:1px; padding:0; border:0; overflow:hidden; clip-path:inset(50%); }
 .site-header.is-light .header-cta { color:var(--ink); border-color:currentColor; }
 .enquiry-layout > *, .enquiry-form > * { min-width:0; }
+
+.hero-brand { margin:0; font:inherit; }
+.hero-brand .hero-logo, .hero-brand .hero-logo-sub { display:block; }

@@ -297,7 +297,7 @@
         " is not published here yet. Our team can share current photography, a private briefing, and availability over WhatsApp.";
 
     const secondBtn = soldOut
-      ? '<a class="btn btn-outline" href="project.html?id=upcoming">See live projects</a>'
+      ? '<a class="btn btn-outline" href="/projects/madina-mall-residency/">See live projects</a>'
       : '<a class="btn btn-outline" href="tel:03124455477">Call 0312 4455477</a>';
 
     return (
@@ -710,7 +710,7 @@
       esc(project.name) +
       " is sold out.</strong> Floor plans and payment schedules are closed for this development. For current inventory, see Madina Mall &amp; Residency or Madina Heights 4 &amp; 5.</p>" +
       '<div class="dossier-archive-status-actions">' +
-      '<a class="btn" href="project.html?id=upcoming">Madina Mall &amp; Residency</a>' +
+      '<a class="btn" href="/projects/madina-mall-residency/">Madina Mall &amp; Residency</a>' +
       '<a class="btn btn-outline" href="' +
       esc(waLive) +
       '" target="_blank" rel="noopener noreferrer">WhatsApp for live options</a>' +
