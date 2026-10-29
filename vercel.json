@@ -59,28 +59,6 @@
       "statusCode": 308
     },
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "madinamallandresidency.com"
-        }
-      ],
-      "destination": "https://www.madinadeveloper.com/projects/madina-mall-residency/",
-      "statusCode": 308
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.madinamallandresidency.com"
-        }
-      ],
-      "destination": "https://www.madinadeveloper.com/projects/madina-mall-residency/",
-      "statusCode": 308
-    },
-    {
       "source": "/:path*",
       "has": [
         {
@@ -141,28 +119,6 @@
         {
           "type": "host",
           "value": "www.madinaheights.com"
-        }
-      ],
-      "destination": "https://www.madinadeveloper.com/:path*",
-      "statusCode": 308
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "madinamallandresidency.com"
-        }
-      ],
-      "destination": "https://www.madinadeveloper.com/:path*",
-      "statusCode": 308
-    },
-    {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.madinamallandresidency.com"
         }
       ],
       "destination": "https://www.madinadeveloper.com/:path*",
@@ -326,6 +282,26 @@
     }
   ],
   "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "madinamallandresidency.com"
+        }
+      ],
+      "destination": "/project-upcoming.html"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.madinamallandresidency.com"
+        }
+      ],
+      "destination": "/project-upcoming.html"
+    },
     {
       "source": "/about-us/",
       "destination": "/ceo.html"
