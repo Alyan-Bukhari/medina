@@ -10,19 +10,19 @@ export type StackItem = {
 };
 
 const DEFAULT_ITEMS: StackItem[] = [
-  { src: "/images/la-monte-vista/exterior-card.jpeg", title: "La Monte Vista", caption: "Sold Out", href: "project.html?id=1" },
-  { src: "/images/project-2.jpg", title: "Madina Heights 1", caption: "Sold Out", href: "project.html?id=2" },
-  { src: "/images/madina-heights-2/photo-06.jpeg", title: "Madina Heights 2", caption: "Sold Out", href: "project.html?id=3" },
-  { src: "/images/project-4.jpg", title: "Madina Heights 3", caption: "Sold Out", href: "project.html?id=4" },
-  { src: "/images/madina-heights-4/elevation/elevation-01.jpg", title: "Madina Heights 4", caption: "80% Sold", href: "project.html?id=5" },
-  { src: "/images/madina-heights-5/commercial-view.jpeg", title: "Madina Heights 5", caption: "80% Sold", href: "project.html?id=6" },
-  { src: "/images/project-7.jpg", title: "Madina Silver Heights", caption: "Sold Out", href: "project.html?id=7" },
-  { src: "/images/madina-homes/page-1.jpg", title: "Madina Homes", caption: "Sold Out", href: "project.html?id=8" },
+  { src: "/images/la-monte-vista/exterior-card.jpeg", title: "La Monte Vista", caption: "Sold Out", href: "/projects/la-monte-vista/" },
+  { src: "/images/project-2.jpg", title: "Madina Heights 1", caption: "Sold Out", href: "/projects/madina-heights-1/" },
+  { src: "/images/madina-heights-2/photo-06.jpeg", title: "Madina Heights 2", caption: "Sold Out", href: "/projects/madina-heights-2/" },
+  { src: "/images/project-4.jpg", title: "Madina Heights 3", caption: "Sold Out", href: "/projects/madina-heights-3/" },
+  { src: "/images/madina-heights-4/elevation/elevation-01.jpg", title: "Madina Heights 4", caption: "80% Sold", href: "/projects/madina-heights-4/" },
+  { src: "/images/madina-heights-5/commercial-view.jpeg", title: "Madina Heights 5", caption: "80% Sold", href: "/projects/madina-heights-5/" },
+  { src: "/images/project-7.jpg", title: "Madina Silver Heights", caption: "Sold Out", href: "/projects/madina-silver-heights/" },
+  { src: "/images/madina-homes/page-1.jpg", title: "Madina Homes", caption: "Sold Out", href: "/projects/madina-homes/" },
   {
     src: "/images/madina-mall-featured.jpg",
     title: "Madina Mall & Residency",
     caption: "Live",
-    href: "project.html?id=upcoming",
+    href: "/projects/madina-mall-residency/",
   },
 ];
 

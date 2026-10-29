@@ -47,20 +47,6 @@
   </script>
   <meta name="theme-color" content="#452d2a">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <script>
-    (function () {
-      try {
-        var q = new URLSearchParams(location.search);
-        if (q.get("skipIntro") === "1") {
-          sessionStorage.setItem("madina-intro-seen", "1");
-          return;
-        }
-        if (sessionStorage.getItem("madina-intro-seen") !== "1") {
-          document.documentElement.classList.add("intro-pending");
-        }
-      } catch (e) {}
-    })();
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
@@ -78,16 +64,6 @@
   </script>
 </head>
 <body>
-  <div id="intro-splash" class="intro-splash" role="presentation" aria-hidden="true">
-    <div class="intro-splash__mark" aria-hidden="true">
-      <span class="intro-splash__mark-letter">R</span>
-    </div>
-    <div class="intro-splash__wordmark">
-      <span class="intro-splash__word-main">Madina</span>
-      <span class="intro-splash__word-sub">Developers</span>
-    </div>
-    <p class="intro-splash__tag">Elevating real estate in Pakistan</p>
-  </div>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="loadbar" id="loadbar" aria-hidden="true"><i></i></div>
 
@@ -143,14 +119,14 @@
           height="1080"
           alt="Madina Mall & Residency, a Madina development in Bahria Town Lahore"
           decoding="async"
+          fetchpriority="high"
         >
       </div>
       <div class="hero-veil"></div>
       <div class="hero-lockup">
         <p class="hero-kicker">Lahore · Eight delivered developments</p>
-        <h1 class="hero-logo">Madina</h1>
-        <p class="hero-logo-sub">Developers</p>
-        <p class="hero-tagline">Client-centric living and Sharia-compliant investment across Bahria Town, Canal Bank, and Safari Villas.</p>
+        <h1 class="hero-brand"><span class="hero-logo">Madina</span> <span class="hero-logo-sub">Developer</span></h1>
+        <p class="hero-tagline">Madina Developer creates residential and commercial properties in Lahore, across Bahria Town, Canal Bank Road, and Safari Villas.</p>
         <div class="hero-actions">
           <a class="btn" href="/projects/">View Projects</a>
           <a class="btn btn-ghost" href="/virtual-tour/">Take a virtual tour</a>
@@ -260,8 +236,8 @@
     <section class="manifesto" id="story">
       <div class="wrap manifesto-inner">
         <p class="eyebrow">Vision</p>
-        <h2 class="display display-emphasis" data-split="chars-scrub">Elevating real estate standards in <em>Pakistan.</em></h2>
-        <p class="manifesto-lead">Client-centric solutions and seamless investment portfolios tailored for excellence.</p>
+        <h2 class="display display-emphasis" data-split="chars-scrub">Madina Developer: building in <em>Lahore.</em></h2>
+        <p class="manifesto-lead">Explore Madina Heights, Madina Homes, La Monte Vista, and Madina Mall &amp; Residency. Learn about our developments, compare locations, and speak to our team about available properties and site visits.</p>
         <div class="hero-actions">
           <a class="btn" href="/projects/">View Projects</a>
           <a class="btn btn-outline" href="/contact-us/">Start Journey</a>
