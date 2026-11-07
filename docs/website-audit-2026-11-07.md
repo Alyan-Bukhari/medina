@@ -52,3 +52,7 @@ The former company Mall route redirects to the Mall homepage. The former company
 - https://support.google.com/business/answer/7091
 
 Exact-match domains alone do not establish authority. The strategy is three useful sites with distinct project/company purposes, plus consolidated company aliases—not five copies competing for the same brand query.
+
+## Owner-supplied location
+
+The owner supplied https://maps.app.goo.gl/1qVXhVcomazyWJAbA. It resolves to the coordinates 31.376608, 74.185796, not a named Business Profile. Added office directions links and a Place location for the organization. Street address, opening hours and the actual verified Business Profile remain unconfirmed.
