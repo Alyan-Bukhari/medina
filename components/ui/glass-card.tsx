@@ -45,7 +45,7 @@ const GlassCard = React.forwardRef<HTMLAnchorElement, GlassCardProps>(
         )}
         {...props}
       >
-        <div className="relative h-full overflow-hidden rounded-[40px] bg-gradient-to-br from-[#2a1c19] to-[#120c0b] shadow-2xl transition-all duration-500 ease-in-out [transform-style:preserve-3d] group-hover:[box-shadow:rgba(28,21,18,0.35)_30px_50px_25px_-40px,rgba(28,21,18,0.18)_0px_25px_30px_0px] group-hover:[transform:rotate3d(1,1,0,18deg)]">
+        <div className="relative h-full overflow-hidden rounded-[40px] bg-gradient-to-br from-[#2a1c19] to-[#120c0b] shadow-2xl transition-all duration-500 ease-in-out [transform-style:preserve-3d] group-hover:[box-shadow:rgba(28,21,18,0.35)_30px_50px_25px_-40px,rgba(28,21,18,0.18)_0px_25px_30px_0px] motion-safe:group-hover:-translate-y-1 motion-reduce:transition-none">
           <img
             src={image}
             alt=""
@@ -66,7 +66,7 @@ const GlassCard = React.forwardRef<HTMLAnchorElement, GlassCardProps>(
               )}
             >
               {badgeKind === "live" ? (
-                <i className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#fbf6ee]" />
+                <i className="h-1.5 w-1.5 rounded-full bg-[#fbf6ee]" />
               ) : null}
               {badge}
             </span>

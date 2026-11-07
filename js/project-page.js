@@ -14,6 +14,7 @@
 
   /** Brand lines that replace the Madina Developer wordmark. */
   const PROJECT_BRANDS = {
+    "upcoming": { main: "Madina Mall", sub: "& Residency", href: "https://www.madinamallandresidency.com/", activeMatch: href => href.includes("madinamallandresidency.com") },
     "1": {
       main: "La Monte",
       sub: "Vista",
@@ -28,7 +29,7 @@
     }
   };
 
-  const MADINA_HEIGHTS_IDS = new Set(["2", "3", "4", "5", "6", "7", "upcoming"]);
+  const MADINA_HEIGHTS_IDS = new Set(["2", "3", "4", "5", "6", "7"]);
 
   function applyProjectBranding(id) {
     const key = String(id);
@@ -38,7 +39,7 @@
       brand = {
         main: "Madina",
         sub: "Heights",
-        href: "projects.html?series=madina-heights",
+        href: "https://www.madinaheights.com/",
         activeMatch: (href) => href.includes("series=madina-heights")
       };
     }
@@ -74,8 +75,8 @@
     if (!window.RT || !RT.getProject) return;
     const params = new URLSearchParams(window.location.search);
     const id =
-      params.get("id") ||
       (document.body && document.body.getAttribute("data-seo-project")) ||
+      params.get("id") ||
       "1";
     const project = RT.getProject(id);
 
@@ -85,32 +86,6 @@
       const missingActions = document.getElementById("p-hero-actions");
       if (missingActions) missingActions.hidden = true;
       return;
-    }
-
-    document.title = project.name + " | Madina Developer";
-    const desc = document.querySelector('meta[name="description"]');
-    if (desc) {
-      desc.setAttribute(
-        "content",
-        project.name +
-          " in " +
-          project.location +
-          " — " +
-          project.status +
-          ". Madina Developer, Lahore."
-      );
-    }
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", project.name + " | Madina Developer");
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", project.overview || "");
-    const ogImg = document.querySelector('meta[property="og:image"]');
-    if (ogImg) {
-      try {
-        ogImg.setAttribute("content", new URL(project.image, window.location.origin).href);
-      } catch (err) {
-        ogImg.setAttribute("content", project.image);
-      }
     }
 
     applyProjectBranding(id);
@@ -132,7 +107,7 @@
             }
           : null);
 
-      if (heroClip && heroClip.src) {
+      if (heroClip && heroClip.src && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         const poster = heroClip.poster || project.image;
         const src = heroClip.src;
         heroVideo.poster = poster;
@@ -295,7 +270,7 @@
   function renderNext(project) {
     const host = document.getElementById("p-next");
     if (!host || !RT.PROJECTS) return;
-    if (project.filter === "upcoming") {
+    if (String(project.id) === "upcoming") {
       host.hidden = true;
       host.innerHTML = "";
       return;

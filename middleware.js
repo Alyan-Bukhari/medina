@@ -1,21 +1,10 @@
 import { next, rewrite } from '@vercel/functions';
-
+import { resolveRoute } from './lib/site-routing.js';
 export const config = { matcher: '/:path*' };
-
 export default function middleware(request) {
-  const url = new URL(request.url);
-  const brandAliases = ['madinadevelopers.pk', 'www.madinadevelopers.pk', 'madinadevelopers.com.pk', 'www.madinadevelopers.com.pk'];
-  if (brandAliases.includes(url.hostname)) {
-    url.hostname = 'www.madinadeveloper.com';
-    url.protocol = 'https:';
-    return Response.redirect(url, 308);
-  }
-  const mallHosts = ['madinamallandresidency.com', 'www.madinamallandresidency.com'];
-  if (mallHosts.includes(url.hostname) && url.pathname === '/') {
-    url.pathname = '/project-upcoming.html';
-    url.searchParams.set('id', 'upcoming');
-    url.searchParams.delete('series');
-    return rewrite(url);
-  }
+  const route = resolveRoute(request.url);
+  if (route.kind === 'redirect') return Response.redirect(route.url, route.status);
+  if (route.kind === 'notfound') return new Response('<!doctype html><html lang="en"><head><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width"><title>Page not found | Madina</title></head><body><main><h1>Page not found</h1><p>This address does not match a project or page.</p><a href="/">Return home</a></main></body></html>', {status:404,headers:{'Content-Type':'text/html; charset=utf-8'}});
+  if (route.kind === 'rewrite') { const url = new URL(request.url); url.pathname=route.path; return rewrite(url); }
   return next();
 }

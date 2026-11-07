@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite --port 8765 --strictPort",
     "build": "vite build",
-    "preview": "vite preview --port 8765 --strictPort"
+    "preview": "vite preview --port 8765 --strictPort",
+    "check:sites": "node scripts/check-sites.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
