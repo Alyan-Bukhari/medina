@@ -1,6 +1,6 @@
 /**
  * Madina Developer — project data
- * Sourced from the live site (realtekdevelopers.com/js/app.js) and provided brief.
+ * Project details supplied for the Madina portfolio.
  * Do not invent additional stats.
  */
 (function (global) {
@@ -49,10 +49,10 @@
       completion: "2021",
       timeline: "Jun 2019 – Jan 2021",
       overview:
-        "Delivered 2021 in 166-B Commercial — 20 apartments and three commercial halls, now fully sold.",
+        "La Monte Vista at 166-B Commercial, Bahria Town Lahore: explore the completed building, its 20 apartments, three commercial halls and project photographs.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Units", value: "20 apartments, 03 commercial halls" },
         { label: "Area", value: "13,600 sq. ft." }
       ],
@@ -206,10 +206,10 @@
       completion: "2021",
       timeline: "Feb 2020 – March 2021",
       overview:
-        "Main Canal Bank Road — 22 apartments and two commercial halls, handed over in 2021.",
+        "Madina Heights 1 on Main Canal Bank Road combines 22 apartments with two commercial halls. Explore the building location and completed project details.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Units", value: "22 apartments, 02 commercial halls" },
         { label: "Area", value: "13,000 sq. ft." }
       ],
@@ -238,10 +238,10 @@
       completion: "2023",
       timeline: "Jun 2022 – Jun 2023",
       overview:
-        "Sector-C side commercial — 18 apartments and six halls, completed 2023.",
+        "Explore Madina Heights 2 at 189 A Side Commercial, Sector C, Bahria Town. View photographs and details of its 18 apartments and six commercial halls.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "150% increase on investment" },
+
         { label: "Units", value: "18 apartments, 06 commercial halls" },
         { label: "Area", value: "9,000 sq. ft." }
       ],
@@ -277,10 +277,10 @@
       completion: "2025",
       timeline: "Aug 2023 – Aug 2025",
       overview:
-        "Umer block, next to Safari Villas — 22 apartments and two commercial halls, sold out.",
+        "Madina Heights 3 is located at 42 Umer Block Commercial near Safari Villas. Explore this residential and commercial building and its project details.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "100% increase on investment" },
+
         { label: "Units", value: "22 apartments, 02 commercial halls" },
         { label: "Area", value: "13,000 sq. ft." }
       ],
@@ -302,10 +302,10 @@
       timeline: "Dec 2023 – June 2026",
       virtualTours: HEIGHTS4_TOURS,
       overview:
-        "Two plots at Umer block — 54 apartments and 27 shops, still booking on a 30-month plan.",
+        "Explore Madina Heights 4 at plots 11–12 Umer Block Commercial: apartment layouts, shops, photographs and virtual tours. Enquire about current availability.",
       facts: [
         { label: "Status", value: "80% SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Plan", value: "30 months instalments & possession" },
         { label: "Units", value: "54 apartments, 27 shops" },
         { label: "Area", value: "30,000 sq. ft." }
@@ -374,10 +374,10 @@
       completion: "2026",
       timeline: "March 2024 – Dec 2026",
       overview:
-        "Our largest Heights building — 84 apartments and 43 shops, still booking through 2026.",
+        "Discover Madina Heights 5 in Bahria Town Lahore, with 84 apartments and 43 shops. View building photographs and contact the team for current booking details.",
       facts: [
         { label: "Status", value: "80% SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Plan", value: "30 months instalments & possession" },
         { label: "Units", value: "84 apartments, 43 shops" },
         { label: "Area", value: "45,000 sq. ft." }
@@ -405,10 +405,10 @@
       completion: "2025",
       timeline: "March 2024 – March 2025",
       overview:
-        "Twelve-month plan, 35 apartments — handed over 2025 in 166B Commercial.",
+        "Madina Silver Heights is a completed project at 166B Commercial, Bahria Town Lahore. Explore the building, its 35 apartments and project photographs.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Units", value: "35 apartments, 03 commercial halls" },
         { label: "Area", value: "30,000 sq. ft." }
       ],
@@ -437,10 +437,10 @@
       completion: "Ongoing",
       timeline: "Dec 2024 – Ongoing",
       overview:
-        "Fifty three-bedroom villas in a gated community — sold out, possession ongoing.",
+        "Explore Madina Homes in Mariam Town: a collection of 50 three-bedroom villas. View home photographs and contact the team for project and possession details.",
       facts: [
         { label: "Status", value: "SOLD OUT" },
-        { label: "ROI", value: "200% increase on investment" },
+
         { label: "Units", value: "50 three-bedroom units, 03 commercial halls" },
         { label: "Type", value: "Double-story villas built on 3 marlas" }
       ],
@@ -477,13 +477,13 @@
       completion: null,
       timeline: "Now live",
       overview:
-        "A mixed-use mall and residences in Bahria Town — studio to three-bed, premium retail, owned on a 36-month plan.",
+        "Explore Madina Mall & Residency in Bahria Town Lahore. View apartment layouts, retail spaces, amenities and project photographs, and enquire about payment plans.",
       facts: [
         { label: "Status", value: "Live" },
         { label: "Installment", value: "36 months" },
         { label: "Residences", value: "Studio, 1 bed, 2 bed, 3 bed" }
       ],
-      tags: ["Luxury Suites", "Premium Retail", "Limitless ROI"],
+      tags: ["Luxury Suites", "Premium Retail", "Apartment layouts"],
       gallery: [
         { src: "images/madina-mall-featured.jpg", alt: "Madina Mall & Residency exterior" },
         { src: "images/madina-mall-exterior-2.jpg", alt: "Madina Mall exterior view" },
@@ -751,7 +751,10 @@
   }
 
   function projectHref(id) {
-    return "/projects/" + {"1": "la-monte-vista", "2": "madina-heights-1", "3": "madina-heights-2", "4": "madina-heights-3", "5": "madina-heights-4", "6": "madina-heights-5", "7": "madina-silver-heights", "8": "madina-homes", "upcoming": "madina-mall-residency"}[id] + "/";
+    const slugs = {1:'la-monte-vista',2:'madina-heights-1',3:'madina-heights-2',4:'madina-heights-3',5:'madina-heights-4',6:'madina-heights-5',7:'madina-silver-heights',8:'madina-homes'};
+    if (String(id) === 'upcoming') return 'https://www.madinamallandresidency.com/';
+    const origin = ['2','3','4','5','6','7'].includes(String(id)) ? 'https://www.madinaheights.com' : 'https://www.madinadeveloper.com';
+    return slugs[id] ? origin + '/projects/' + slugs[id] + '/' : origin + '/projects/';
   }
 
   function whatsappHref(message) {

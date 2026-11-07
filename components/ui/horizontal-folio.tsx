@@ -369,7 +369,7 @@ export default function HorizontalFolio({
                   <div>
                     <dt>Email</dt>
                     <dd>
-                      <a href="mailto:info@realtek.pk">info@realtek.pk</a>
+                      <a href="mailto:madinaheightspvtlimited@gmail.com">madinaheightspvtlimited@gmail.com</a>
                     </dd>
                   </div>
                   <div>

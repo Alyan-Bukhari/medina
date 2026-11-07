@@ -12,11 +12,7 @@
     const nav = $("#nav");
     if (!header) return;
 
-    const onDarkHero =
-      !!$(".hero, .page-hero, .heights-page-hero") ||
-      document.body.classList.contains("is-folio-series") ||
-      document.body.getAttribute("data-seo-series") === "madina-heights" ||
-      new URLSearchParams(window.location.search).get("series") === "madina-heights";
+    const onDarkHero = !!$(".hero, .page-hero, .heights-page-hero");
     if (!onDarkHero) header.classList.add("is-light");
     else header.classList.remove("is-light");
 
@@ -37,7 +33,12 @@
         toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
         document.body.style.overflow = open ? "hidden" : "";
       });
-      $$(".nav-link", nav).forEach((link) => {
+      document.addEventListener("keydown", event => {
+        if (event.key !== "Escape" || !nav.classList.contains("is-open")) return;
+        toggle.click();
+        toggle.focus();
+      });
+      $$("a[href]", nav).forEach((link) => {
         link.addEventListener("click", () => {
           nav.classList.remove("is-open");
           toggle.classList.remove("is-open");
@@ -354,7 +355,7 @@
     gsap.registerPlugin(ScrollTrigger);
 
     initHeroParallax();
-    initWorkGrid();
+    document.querySelector(".work")?.classList.add("is-native-scroll");
     initSlideMask();
     initRail();
 
@@ -708,7 +709,7 @@
     document.documentElement.classList.remove("intro-pending");
     $("#intro-splash")?.remove();
     (() => {
-      const lenis = initLenis();
+      const lenis = null;
       window.RT = window.RT || {};
       window.RT.lenis = lenis;
       window.dispatchEvent(new CustomEvent("rt:lenis"));

@@ -5,8 +5,8 @@ import "./heights.css";
 function currentProjectId() {
   const params = new URLSearchParams(window.location.search);
   return (
-    params.get("id") ||
     document.body?.getAttribute("data-seo-project") ||
+    params.get("id") ||
     ""
   );
 }

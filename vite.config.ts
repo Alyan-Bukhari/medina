@@ -1,3 +1,4 @@
+import { finalizeSites } from "./lib/site-build.js";
 import fs from "node:fs";
 import path from "node:path";
 import tailwindcss from "@tailwindcss/vite";
@@ -66,7 +67,7 @@ const PROJECT_PAGES = [
     location: "Bahria Town, Lahore",
     type: "Commercial + Apartments",
     overview:
-      "Delivered 2021 in 166-B Commercial — 20 apartments and three commercial halls, now fully sold.",
+      "La Monte Vista at 166-B Commercial, Bahria Town Lahore: explore the completed building, its 20 apartments, three commercial halls and project photographs.",
     image: "images/la-monte-vista/exterior-card.jpeg",
     address: "166-B Commercial, Bahria Town."
   },
@@ -77,7 +78,7 @@ const PROJECT_PAGES = [
     location: "Canal Bank Road",
     type: "Commercial + Apartments",
     overview:
-      "Main Canal Bank Road — 22 apartments and two commercial halls, handed over in 2021.",
+      "Madina Heights 1 on Main Canal Bank Road combines 22 apartments with two commercial halls. Explore the building location and completed project details.",
     image: "images/project-2.jpg",
     address: "Sector D, Main Canal Bank Road."
   },
@@ -88,7 +89,7 @@ const PROJECT_PAGES = [
     location: "Sector C, Bahria Town",
     type: "Commercial + Apartments",
     overview:
-      "Sector-C side commercial — 18 apartments and six halls, completed 2023.",
+      "Explore Madina Heights 2 at 189 A Side Commercial, Sector C, Bahria Town. View photographs and details of its 18 apartments and six commercial halls.",
     image: "images/madina-heights-2/photo-06.jpeg",
     address: "189 A Side Commercial, Sector-C."
   },
@@ -99,7 +100,7 @@ const PROJECT_PAGES = [
     location: "Safari Villas",
     type: "Commercial + Residential",
     overview:
-      "Umer block, next to Safari Villas — 22 apartments and two commercial halls, sold out.",
+      "Madina Heights 3 is located at 42 Umer Block Commercial near Safari Villas. Explore this residential and commercial building and its project details.",
     image: "images/project-4.jpg",
     address: "42, Umer block Commercial."
   },
@@ -110,7 +111,7 @@ const PROJECT_PAGES = [
     location: "Safari Villas",
     type: "Commercial + Residential",
     overview:
-      "Two plots at Umer block — 54 apartments and 27 shops, still booking on a 30-month plan.",
+      "Explore Madina Heights 4 at plots 11–12 Umer Block Commercial: apartment layouts, shops, photographs and virtual tours. Enquire about current availability.",
     image: "images/madina-heights-4/elevation/elevation-01.jpg",
     address: "11,12 Umer block Commercial."
   },
@@ -121,7 +122,7 @@ const PROJECT_PAGES = [
     location: "Bahria Town, Lahore",
     type: "Commercial + Residential",
     overview:
-      "Our largest Heights building — 84 apartments and 43 shops, still booking through 2026.",
+      "Discover Madina Heights 5 in Bahria Town Lahore, with 84 apartments and 43 shops. View building photographs and contact the team for current booking details.",
     image: "images/madina-heights-5/commercial-view.jpeg",
     address: "166B Commercial, Bahria Town."
   },
@@ -132,7 +133,7 @@ const PROJECT_PAGES = [
     location: "Bahria Town, Lahore",
     type: "Mixed Use",
     overview:
-      "Twelve-month plan, 35 apartments — handed over 2025 in 166B Commercial.",
+      "Madina Silver Heights is a completed project at 166B Commercial, Bahria Town Lahore. Explore the building, its 35 apartments and project photographs.",
     image: "images/project-7.jpg",
     address: "166B Commercial, Bahria Town."
   },
@@ -143,7 +144,7 @@ const PROJECT_PAGES = [
     location: "Mariam Town",
     type: "Double-story villas",
     overview:
-      "Fifty three-bedroom villas in a gated community — sold out, possession ongoing.",
+      "Explore Madina Homes in Mariam Town: a collection of 50 three-bedroom villas. View home photographs and contact the team for project and possession details.",
     image: "images/madina-homes/page-1.jpg",
     address: "Mariam Town (Gated Community)."
   },
@@ -154,7 +155,7 @@ const PROJECT_PAGES = [
     location: "Bahria Town, Lahore",
     type: "36 months instalment",
     overview:
-      "A mixed-use mall and residences in Bahria Town — studio to three-bed, premium retail, owned on a 36-month plan.",
+      "Explore Madina Mall & Residency in Bahria Town Lahore. View apartment layouts, retail spaces, amenities and project photographs, and enquire about payment plans.",
     image: "images/madina-mall-featured.jpg",
     address: "Bahria Town, Lahore"
   }
@@ -301,6 +302,7 @@ function copyStatic() {
 
       fs.writeFileSync(path.join(dist, "robots.txt"), robotsTxt());
       fs.writeFileSync(path.join(dist, "sitemap.xml"), sitemapXml(sitemapUrls));
+      finalizeSites(dist);
     }
   };
 }
@@ -321,7 +323,7 @@ export default defineConfig({
       input: {
         main: path.resolve(__dirname, "index.html"),
 "contact-us": path.resolve(__dirname, "contact-us.html"),
-"blogs": path.resolve(__dirname, "blogs.html"),
+
 "virtual-tour": path.resolve(__dirname, "virtual-tour.html"),
 "3d-models": path.resolve(__dirname, "3d-models.html"),
 
