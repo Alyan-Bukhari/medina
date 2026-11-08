@@ -36,4 +36,9 @@ assert.equal(resolveRoute(MAIN+'/projects/madina-mall-residency/?id=upcoming').u
 assert.equal(resolveRoute(MAIN+'/projects/madina-heights/').url,HEIGHTS+'/');
 assert.equal(resolveRoute('https://madinaheights.com/').url,HEIGHTS+'/');
 assert.equal(resolveRoute('https://madinamallandresidency.com/').url,MALL+'/');
+for (const [file,name,domain] of [['index.html','Madina Developer','madinadeveloper.com'],['sites/heights/index.html','Madina Heights','madinaheights.com'],['sites/mall/index.html','Madina Mall & Residency','madinamallandresidency.com']]) {
+ const html=fs.readFileSync('dist/'+file,'utf8');
+ const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
+ const site=graph.filter(n=>n['@type']==='WebSite');assert.equal(site.length,1);assert.equal(site[0].name,name);assert.ok(site[0].alternateName.includes(domain));
+}
 console.log(`PASS: ${pages.length} canonical pages, metadata, structured data, internal links, aliases, legacy routes, missing pages and all three sitemaps.`);
