@@ -2,7 +2,7 @@
 
 The owner confirmed that RealTek and Madina websites represent the same business and projects. Do not invent a separate legal entity, unrelated management, exclusive project ownership, or a marketing/developer relationship to manufacture a distinction.
 
-The reported search results label madinadeveloper.com pages as “RealTek Developers.” This is Google's site name, separate from the page title. The supplied screenshots show older page titles/descriptions; current Madina HTML already identifies Madina Developer and the Heights 5 URL now redirects to its canonical Heights domain.
+The reported search results label madinadeveloper.com pages as “RealTek Developers.” This is Google's site name, separate from the page title. The supplied screenshots show older page titles/descriptions; current Madina HTML identifies Madina Developer and every Madina project URL canonically resolves on madinadeveloper.com.
 
 This change strengthens the existing WebSite node with preferred alternate names and a lowercase domain fallback, following Google's site-name troubleshooting guidance. The same independent technical correction is being made in the Realtek repository. It does not redirect either company homepage to the other or promise that Google will index every duplicate project page separately.
 
@@ -12,9 +12,9 @@ Also removed office-direction links inadvertently nested inside homepage project
 
 1. Inspect https://www.madinadeveloper.com/ in the property you own. Run Test Live URL, check that the rendered HTML has `WebSite.name` = `Madina Developer`, and request indexing.
 2. Inspect https://www.madinadeveloper.com/about-us/ and request indexing for the updated About page.
-3. Inspect the old https://www.madinadeveloper.com/projects/madina-heights-5/ URL. It should redirect to https://www.madinaheights.com/projects/madina-heights-5/. Inspect/request indexing for the destination using the Heights property.
+3. Inspect `https://www.madinadeveloper.com/projects/madina-heights-5/` and request indexing from the Madina Developer property. The former Madina Heights-domain equivalent permanently redirects to this URL.
 4. On the RealTek property, inspect https://realtekdevelopers.com/ and https://realtekdevelopers.com/about-us/. Verify the RealTek name and self-canonical URL, then request indexing.
-5. Submit each owned site's own `/sitemap.xml`. Do not submit a competitor/other host's sitemap to a URL-prefix property.
+5. Submit `https://www.madinadeveloper.com/sitemap.xml` to the Madina Developer Search Console property. The Madina Heights and Madina Mall & Residency domains permanently redirect to their matching Madina Developer project pages and should not have separate sitemaps.
 6. Review user-declared versus Google-selected canonical and last crawl date after processing. Do not use Google's removal tool to repair a wrong site name; removal can hide the results you want to keep.
 
 The browser connection did not expose an authenticated Search Console session, so no indexing requests or sitemap submissions were performed by this task. Google says recrawling/reprocessing may take days to weeks. Site names and positions remain automated Google decisions.

@@ -19,26 +19,29 @@ for(const host of ['madinadevelopers.pk','www.madinadevelopers.pk','madinadevelo
  assert.equal(resolveRoute('https://'+host+'/?utm_source=test').url,MAIN+'/?utm_source=test');
 }
 for(const [id,slug] of Object.entries(SLUGS)) {
- for(const origin of [MAIN,HEIGHTS,MALL]) {
+ for(const origin of [MAIN]) {
   assert.equal(resolveRoute(origin+'/project.html?id='+id).url,projectUrl(id));
   assert.equal(resolveRoute(origin+'/project-'+id+'.html').url,projectUrl(id));
  }
  assert.equal(resolveRoute(projectUrl(id)+'?id=wrong').url,projectUrl(id));
 }
-for(const origin of [MAIN,HEIGHTS,MALL]){
+for(const origin of [MAIN]){
  assert.equal(resolveRoute(origin+'/does-not-exist/').kind,'notfound');
  assert.equal(resolveRoute(origin+'/project.html?id=invalid').kind,'notfound');
  assert.equal(resolveRoute(origin+'/sites/mall/index.html').kind,'notfound');
  for(const p of ['/robots.txt','/sitemap.xml']) assert.ok(fs.existsSync('dist'+resolveRoute(origin+p).path));
  assert.equal(resolveRoute(origin+'/blogs/').url,MAIN+'/contact-us/');
 }
-assert.equal(resolveRoute(MAIN+'/projects/madina-mall-residency/?id=upcoming').url,MALL+'/');
-assert.equal(resolveRoute(MAIN+'/projects/madina-heights/').url,HEIGHTS+'/');
-assert.equal(resolveRoute('https://madinaheights.com/').url,HEIGHTS+'/');
-assert.equal(resolveRoute('https://madinamallandresidency.com/').url,MALL+'/');
-for (const [file,name,domain] of [['index.html','Madina Developer','madinadeveloper.com'],['sites/heights/index.html','Madina Heights','madinaheights.com'],['sites/mall/index.html','Madina Mall & Residency','madinamallandresidency.com']]) {
+assert.equal(resolveRoute(MAIN+'/projects/madina-mall-residency/?id=upcoming').url,MAIN+'/projects/madina-mall-residency/');
+assert.equal(resolveRoute(MAIN+'/projects/madina-heights/').kind,'rewrite');
+assert.equal(resolveRoute('https://madinaheights.com/').url,MAIN+'/projects/madina-heights/');
+for (const slug of ['madina-heights-1','madina-heights-2','madina-heights-3','madina-heights-4','madina-heights-5','madina-silver-heights']) {
+ assert.equal(resolveRoute(HEIGHTS+'/projects/'+slug+'/').url,MAIN+'/projects/'+slug+'/');
+}
+assert.equal(resolveRoute('https://madinamallandresidency.com/').url,MAIN+'/projects/madina-mall-residency/');
+for (const file of ['index.html','projects.html','project-2.html','project-upcoming.html']) {
  const html=fs.readFileSync('dist/'+file,'utf8');
  const graph=JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])['@graph'];
- const site=graph.filter(n=>n['@type']==='WebSite');assert.equal(site.length,1);assert.equal(site[0].name,name);assert.ok(site[0].alternateName.includes(domain));
+ const site=graph.filter(n=>n['@type']==='WebSite');assert.equal(site.length,1);assert.equal(site[0].name,'Madina Developer');assert.ok(site[0].alternateName.includes('madinadeveloper.com'));
 }
-console.log(`PASS: ${pages.length} canonical pages, metadata, structured data, internal links, aliases, legacy routes, missing pages and all three sitemaps.`);
+console.log(`PASS: ${pages.length} canonical pages, metadata, structured data, internal links, aliases, legacy routes and project-domain redirects.`);
