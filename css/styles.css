@@ -2231,7 +2231,7 @@ body.is-folio-series .folio-badge {
   font-size: var(--fs-body-sm);
 }
 
-.footer-col h3 {
+.footer-col h2 {
   font-size: var(--fs-label);
   letter-spacing: var(--ls-label);
   text-transform: uppercase;
