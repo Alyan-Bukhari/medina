@@ -33,7 +33,7 @@ export function RadialHero() {
     <HorizontalFolio
       items={projects}
       eyebrow="Our Projects"
-      body="Every development we have delivered in Lahore — plus Madina Mall & Residency, now live."
+      body="All of our completed Lahore projects, plus Madina Mall & Residency, now booking."
       onActiveChange={onActiveChange}
     />
   );

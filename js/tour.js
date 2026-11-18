@@ -26,12 +26,12 @@
       '<div class="apt-tour-plan" data-tour-plan>' +
       '<p class="apt-tour-kicker">Floor plan</p>' +
       '<h2 data-tour-title></h2>' +
-      '<p class="apt-tour-hint">Tap a marker to open that room.</p>' +
+      '<p class="apt-tour-hint">Tap a point on the plan to view that room.</p>' +
       '<div class="apt-tour-stage"><img data-tour-plan-img alt=""><div data-tour-spots></div></div>' +
       '<div class="apt-tour-rooms" data-tour-rooms></div>' +
       "</div>" +
       '<div class="apt-tour-room" data-tour-room hidden>' +
-      '<button class="apt-tour-back" type="button" data-tour-back>← Back to floor plan</button>' +
+      '<button class="apt-tour-back" type="button" data-tour-back>← Return to floor plan</button>' +
       '<figure class="apt-tour-figure"><img data-tour-room-img alt=""></figure>' +
       '<div class="apt-tour-bar">' +
       '<button type="button" data-tour-prev aria-label="Previous photo">←</button>' +
@@ -44,7 +44,7 @@
       '<div class="apt-tour-picker-copy">' +
       '<p class="apt-tour-kicker" data-tour-picker-kicker>Madina Heights 4</p>' +
       "<h2>Take a virtual tour</h2>" +
-      '<p class="apt-tour-hint">Choose a residence to walk through.</p>' +
+      '<p class="apt-tour-hint">Pick an apartment to tour.</p>' +
       "</div>" +
       '<div class="apt-tour-picker-list" data-tour-picker-list></div>' +
       "</div>" +

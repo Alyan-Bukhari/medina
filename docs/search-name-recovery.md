@@ -27,3 +27,7 @@ Sources:
 - https://developers.google.com/search/docs/appearance/site-names
 - https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls
 - https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+
+## Content separation from RealTek — 18 November 2026
+
+Madina's visible copy was rewritten so it no longer repeats RealTek's sentences word for word: project data (`js/projects.js`), project page sections (`js/dossier.js`, `js/project-page.js`), the Madina Heights page, homepage reels, tour and 3D viewers, and the Home, Projects and Contact pages. Only project names, addresses, unit labels and short category labels remain shared, because they are the same real projects. Both sites keep self-referencing canonicals; neither points to the other.

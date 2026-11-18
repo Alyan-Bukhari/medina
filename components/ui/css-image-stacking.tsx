@@ -36,7 +36,7 @@ type CssImageStackingProps = {
 export default function CssImageStacking({
   items = DEFAULT_ITEMS,
   eyebrow = "Our Projects",
-  body = "Every development we have delivered in Lahore — plus Madina Mall & Residency, now live.",
+  body = "All of our completed Lahore projects, plus Madina Mall & Residency, now booking.",
   onActiveChange,
 }: CssImageStackingProps) {
   const rootRef = useRef<HTMLElement>(null);

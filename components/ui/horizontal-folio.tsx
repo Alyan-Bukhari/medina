@@ -42,7 +42,7 @@ function isMobile() {
 export default function HorizontalFolio({
   items,
   eyebrow = "Our Projects",
-  body = "Every development we have delivered in Lahore — plus Madina Mall & Residency, now live.",
+  body = "All of our completed Lahore projects, plus Madina Mall & Residency, now booking.",
   onActiveChange,
 }: HorizontalFolioProps) {
   const rootRef = useRef<HTMLElement>(null);
@@ -221,13 +221,13 @@ export default function HorizontalFolio({
                   <span>coming soon</span>
                 </li>
               </ul>
-              <p className="hf-hint">Scroll to move through each development</p>
+              <p className="hf-hint">Scroll to see each project</p>
             </div>
             <aside className="hf-end-aside">
               <img
                 className="hf-end-hero"
                 src="/images/mmr-pool.jpg"
-                alt="Indoor pool at Madina Mall & Residency, Bahria Town Lahore"
+                alt="Madina Mall indoor pool"
                 loading="eager"
                 decoding="async"
               />
@@ -240,7 +240,7 @@ export default function HorizontalFolio({
                 decoding="async"
               />
               <div className="hf-end-card">
-                <p className="hf-kicker">In this reel</p>
+                <p className="hf-kicker">Featured here</p>
                 <h3>
                   {items.length} developments
                 </h3>
@@ -314,7 +314,7 @@ export default function HorizontalFolio({
                   Start the <em>conversation.</em>
                 </h2>
                 <p className="hf-lede">
-                  Booking, site visits, and payment plans — WhatsApp or call. The office is in Bahria Town.
+                  Call or WhatsApp our Bahria Town office about bookings, site visits and payment plans.
                 </p>
               </div>
               <ul className="hf-end-stats">
@@ -344,7 +344,7 @@ export default function HorizontalFolio({
               <img
                 className="hf-end-hero"
                 src="/images/mmr-lounge.jpg"
-                alt="Rooftop lounge at Madina Mall & Residency, Bahria Town Lahore"
+                alt="Madina Mall rooftop lounge"
                 loading="lazy"
                 decoding="async"
               />
@@ -383,7 +383,7 @@ export default function HorizontalFolio({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  WhatsApp the office <span aria-hidden="true">→</span>
+                  Message us on WhatsApp <span aria-hidden="true">→</span>
                 </a>
               </div>
             </aside>

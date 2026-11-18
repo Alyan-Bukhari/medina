@@ -93,15 +93,15 @@
           src: "images/la-monte-vista/drone.mp4",
           poster: "images/la-monte-vista/drone-poster.jpg",
           title: "La Monte Vista drone",
-          note: "Aerial site view"
+          note: "Drone view of the site"
         }
       ],
       dossier: {
         copy:
-          "Delivered 2021 in 166-B Commercial, Bahria Town — apartments and commercial halls, now fully sold. Gallery below from the La Monte Vista interiors.",
+          "Completed in 2021 at 166-B Commercial, Bahria Town, La Monte Vista's apartments and commercial halls are all sold. Browse photos of the finished interiors below.",
         hero: "images/la-monte-vista/exterior.jpeg",
         locImage: "images/la-monte-vista/location.jpeg",
-        caption: "La Monte Vista — Bahria Town, Lahore",
+        caption: "La Monte Vista, 166-B Commercial, Bahria Town",
         imageKind: "Photo",
         stats: [
           { label: "Status", value: "Sold Out" },
@@ -116,7 +116,7 @@
             id: "1bed",
             name: "1 Bed",
             area: 0,
-            blurb: "One-bed apartments at La Monte Vista — interiors from the delivered building.",
+            blurb: "Photos of the finished one-bed apartments at La Monte Vista.",
             hero: "images/la-monte-vista/1bedpic_5b.jpeg",
             plan: "images/la-monte-vista/1bedpic_2a_2b.jpeg",
             gallery: [
@@ -139,7 +139,7 @@
             id: "2bed",
             name: "2 Bed",
             area: 0,
-            blurb: "Two-bed apartments at La Monte Vista — interiors from the delivered building.",
+            blurb: "Photos of the finished two-bed apartments at La Monte Vista.",
             hero: "images/la-monte-vista/2bedpic_5a.jpeg",
             plan: "images/la-monte-vista/2bedpic_4a.jpeg",
             gallery: [
@@ -171,13 +171,13 @@
           {
             title: "Sold out",
             note: "Completed 2021",
-            body: "La Monte Vista is fully sold. Call or WhatsApp for related Madina inventory still booking."
+            body: "Every La Monte Vista unit has been sold. Call or WhatsApp us about Madina projects that are still booking."
           }
         ],
         faqs: [
           {
-            q: "Is La Monte Vista still booking?",
-            a: "No — it is sold out. Madina Heights 4 and 5 and Madina Mall & Residency still have availability."
+            q: "Can I still book at La Monte Vista?",
+            a: "No, every unit is sold. Units are still available at Madina Heights 4, Madina Heights 5 and Madina Mall & Residency."
           },
           {
             q: "Where is it?",
@@ -219,7 +219,7 @@
           src: "images/madina-heights-1/drone.mp4",
           poster: "images/madina-heights-1/drone-poster.jpg",
           title: "Madina Heights 1 drone",
-          note: "Aerial site view"
+          note: "Drone view of the site"
         }
       ]
     },
@@ -258,7 +258,7 @@
           src: "images/madina-heights-2/drone.mp4",
           poster: "images/madina-heights-2/drone-poster.jpg",
           title: "Madina Heights 2 drone",
-          note: "Aerial site view"
+          note: "Drone view of the site"
         }
       ]
     },
@@ -418,7 +418,7 @@
           src: "images/madina-silver-heights/drone.mp4",
           poster: "images/madina-silver-heights/drone-poster.jpg",
           title: "Madina Silver Heights drone",
-          note: "Aerial site view"
+          note: "Drone view of the site"
         }
       ]
     },
@@ -442,7 +442,7 @@
         { label: "Status", value: "SOLD OUT" },
 
         { label: "Units", value: "50 three-bedroom units, 03 commercial halls" },
-        { label: "Type", value: "Double-story villas built on 3 marlas" }
+        { label: "Type", value: "3-marla double-storey villas" }
       ],
       gallery: [
         { src: "images/madina-homes/page-1.jpg", alt: "Madina Homes" },
@@ -488,7 +488,7 @@
         { src: "images/madina-mall-featured.jpg", alt: "Madina Mall & Residency exterior" },
         { src: "images/madina-mall-exterior-2.jpg", alt: "Madina Mall exterior view" },
         { src: "images/mmr-retail.jpg", alt: "Premium retail interiors" },
-        { src: "images/mmr-foodcourt.jpg", alt: "Luxury food court" },
+        { src: "images/mmr-foodcourt.jpg", alt: "Food court" },
         { src: "images/mmr-pool.jpg", alt: "Swimming pool" },
         { src: "images/mmr-gym.jpg", alt: "Fitness centre" },
         { src: "images/mmr-spa.jpg", alt: "Sauna and spa" },
@@ -570,10 +570,10 @@
         }
       ],
       paymentNotes: [
-        "Percentages only · rupee amounts on request at booking.",
-        "Front facing category charges will be 15%.",
-        "All areas are approx and gross.",
-        "All category charges that may apply will be applicable."
+        "Shown as percentages · ask our team for rupee amounts.",
+        "Front-facing units carry a 15% category charge.",
+        "Areas are approximate gross figures.",
+        "Applicable category charges will be added."
       ],
       floorPlanImages: [
         { src: "images/madina-mall-floor-basement.jpg", alt: "Basement floor plan" },
@@ -589,20 +589,20 @@
           src: "images/madina-mall/videos/drone.mp4",
           poster: "images/madina-mall/videos/drone-poster.jpg",
           title: "Madina Mall & Residency drone",
-          note: "Aerial site view"
+          note: "Drone view of the site"
         }
       ],
       dossier: {
         copy:
-          "A mixed-use corner in Bahria Town: premium retail at street level, residences above, and a full amenity deck. Studios, one-beds, two-beds, and three-beds on a 36-month, 1% plan — construction-linked, issued in writing at booking.",
+          "Madina Mall & Residency combines street-level shops, apartments above and a shared amenity deck in Bahria Town. Choose a studio, one-, two- or three-bed home on a 36-month, 1% construction-linked plan, with the schedule given in writing when you book.",
         hero: "images/hero-1920.jpg",
         locImage: "images/madina-mall-exterior-2.jpg",
-        caption: "Madina Mall & Residency — evening elevation",
+        caption: "Madina Mall & Residency at dusk",
         imageKind: "Render",
         stats: [
           { label: "Installment", value: "36 months" },
           { label: "Unit types", value: "Studio / 1 Bed / 2 Bed / 3 Bed" },
-          { label: "Status", value: "Live · booking open" }
+          { label: "Status", value: "Now booking" }
         ],
         rate: null,
         months: 36,
@@ -611,7 +611,7 @@
             id: "studio",
             name: "Studio",
             area: 400,
-            blurb: "A compact first home — living, kitchenette, and bath on one plate. The fastest plan to complete.",
+            blurb: "Living area, kitchenette and bathroom in one efficient layout, with the shortest plan to pay off.",
             hero: "images/mmr-studio.jpg",
             plan: "images/units/studio/floorplan.jpg",
             gallery: unitPhotos("studio", "Studio apartment"),
@@ -625,7 +625,7 @@
             id: "1bed",
             name: "1 Bed",
             area: 550,
-            blurb: "A private bedroom plus an open living kitchen — the most requested residential plate.",
+            blurb: "A separate bedroom with an open-plan living and kitchen area. Our most popular layout.",
             hero: "images/mmr-1bed.jpg",
             plan: "images/units/1-bed/floorplan.jpg",
             gallery: unitPhotos("1-bed", "One-bed apartment"),
@@ -640,7 +640,7 @@
             id: "2bed",
             name: "2 Bed",
             area: 850,
-            blurb: "Two bedrooms, a family living room, and a terrace line. Built for Bahria Town living.",
+            blurb: "Two bedrooms, a family lounge and a terrace, sized for families in Bahria Town.",
             hero: "images/mmr-2bed.jpg",
             plan: "images/units/2-bed/floorplan.jpg",
             gallery: unitPhotos("2-bed", "Two-bed apartment"),
@@ -657,7 +657,7 @@
           {
             id: "basement",
             name: "Basement",
-            desc: "Parking, tanks, and 27 numbered shop units on wide passages.",
+            desc: "27 numbered shops along wide corridors, plus parking and water tanks.",
             units: "27 shops",
             sizes: "See blueprint",
             rate: null,
@@ -667,7 +667,7 @@
           {
             id: "ground",
             name: "Ground",
-            desc: "Eighteen shopfronts around the central escalators — the main retail plate.",
+            desc: "18 shops around the central escalators on the main retail level.",
             units: "18 shops",
             sizes: "See blueprint",
             rate: null,
@@ -677,7 +677,7 @@
           {
             id: "first",
             name: "1st Floor",
-            desc: "Brands and commercial suites on the upper mall plate.",
+            desc: "Brand outlets and commercial suites on the upper retail level.",
             units: "25 shops",
             sizes: "See blueprint",
             rate: null,
@@ -687,7 +687,7 @@
           {
             id: "second",
             name: "2nd Floor",
-            desc: "Fashion and lifestyle shopfronts — same plate, lower rate.",
+            desc: "Fashion and lifestyle shops on the same layout at a lower rate.",
             units: "25 shops",
             sizes: "See blueprint",
             rate: null,
@@ -697,7 +697,7 @@
           {
             id: "amenities",
             name: "Amenities",
-            desc: "Pool, paddle, gym, and lounge on the amenity deck — for residents, not bolted on later.",
+            desc: "A residents' amenity deck with a pool, paddle court, gym and lounge.",
             units: "Deck",
             sizes: "Pool · paddle · gym",
             rate: null,
@@ -719,21 +719,21 @@
           {
             title: "Now live",
             note: "Booking open",
-            body: "Madina Mall & Residency is live. WhatsApp for the current schedule, unit list, and a site visit."
+            body: "Bookings are open at Madina Mall & Residency. WhatsApp us for the latest schedule, available units and a site visit."
           }
         ],
         faqs: [
           {
-            q: "How long is the payment plan?",
+            q: "What is the payment plan duration?",
             a: "36 months. Booking 17.5%, confirmation 17.5%, 1% monthly, 4% half-yearly (six times), 5% on possession."
           },
           {
-            q: "What residences are offered?",
-            a: "Studio, 1 bed, 2 bed, and 3 bed. Floor plates and interiors are published for studio, 1 bed, and 2 bed. Three-bed drawings are shared at booking."
+            q: "Which apartment types are available?",
+            a: "Studios, one-beds, two-beds and three-beds. Layouts and interior images are shown here for the studio, one-bed and two-bed; three-bed drawings are provided at booking."
           },
           {
-            q: "Is the schedule rate-linked?",
-            a: "No. It is construction-linked and issued in writing at booking. Front-facing category charges are 15%. Areas are approximate and gross."
+            q: "Is the payment schedule linked to rates?",
+            a: "No. Payments follow construction progress and the schedule is given in writing at booking. Front-facing units carry a 15% category charge, and areas are approximate gross figures."
           },
           {
             q: "How do I book?",

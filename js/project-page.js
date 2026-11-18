@@ -196,7 +196,7 @@
     if (overview) {
       overview.innerHTML =
         "<p>" +
-        escapeHtml(project.overview || "Full project details coming soon.") +
+        escapeHtml(project.overview || "More project details will be added soon.") +
         "</p>";
     }
 
@@ -284,7 +284,7 @@
     const sold = project.filter === "sold";
     host.innerHTML =
       "<h2>" +
-      (sold ? "This one’s sold. The next one is open." : "The next one is booking now.") +
+      (sold ? "Sold out. See what is available now." : "Booking is open on our current projects.") +
       "</h2><p>" +
       escapeHtml(next.overview.split(". ")[0] + ".") +
       '</p><a class="btn btn-light" href="' +
@@ -372,7 +372,7 @@
           escapeHtml(plan.title) +
           '</h3><div class="table-wrap"><table><thead><tr>' +
           "<th>Property Type</th><th>Booking</th><th>Confirmation</th>" +
-          "<th>Instalment / Month</th><th>Half Yearly</th><th>Possession</th>" +
+          "<th>Monthly instalment</th><th>Half Yearly</th><th>Possession</th>" +
           "</tr></thead><tbody>" +
           rows +
           "</tbody></table></div></div>"
@@ -406,7 +406,7 @@
       '<section class="wrap" style="padding-bottom: var(--section)" data-tabs>' +
       '<p class="eyebrow">Amenities</p>' +
       '<h2 class="display" style="font-size: var(--fs-h2); margin-bottom: 0.5rem">World-class amenities</h2>' +
-      '<p style="color: var(--muted); max-width: 48ch">Designed to provide unparalleled convenience and luxury, Madina Mall & Residency features a comprehensive list of amenities.</p>' +
+      '<p style="color: var(--muted); max-width: 48ch">Madina Mall & Residency gives residents and shoppers a full set of everyday and leisure facilities in one building.</p>' +
       '<div class="tabs">' +
       tabs +
       "</div>" +

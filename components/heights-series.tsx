@@ -37,7 +37,7 @@ const ITEMS: SeriesItem[] = [
     kind: "sold",
     title: "Madina Silver Heights",
     meta: "Mixed Use · Bahria Town",
-    description: "Twelve-month plan, 35 apartments — handed over 2025 in 166B Commercial.",
+    description: "35 apartments at 166B Commercial, sold on a 12-month plan and handed over in 2025.",
     image: "/images/project-7.jpg",
     href: "/projects/madina-silver-heights/",
     badge: "Sold Out",
@@ -49,7 +49,7 @@ const ITEMS: SeriesItem[] = [
     kind: "available",
     title: "Madina Heights 5",
     meta: "Commercial + Residential · Bahria Town",
-    description: "Our largest Heights building — 84 apartments and 43 shops, still booking through 2026.",
+    description: "84 apartments and 43 shops make this the biggest Madina Heights building. Booking continues through 2026.",
     image: "/images/madina-heights-5/commercial-view.jpeg",
     href: "/projects/madina-heights-5/",
     badge: "80% Sold",
@@ -61,7 +61,7 @@ const ITEMS: SeriesItem[] = [
     kind: "available",
     title: "Madina Heights 4",
     meta: "Commercial + Residential · Safari Villas",
-    description: "Two plots at Umer block — 54 apartments and 27 shops, still booking on a 30-month plan.",
+    description: "54 apartments and 27 shops across two Umer Block plots, booking on a 30-month plan.",
     image: "/images/madina-heights-4/elevation/elevation-01.jpg",
     href: "/projects/madina-heights-4/",
     badge: "80% Sold",
@@ -73,7 +73,7 @@ const ITEMS: SeriesItem[] = [
     kind: "sold",
     title: "Madina Heights 3",
     meta: "Commercial + Residential · Safari Villas",
-    description: "Umer block, next to Safari Villas — 22 apartments and two commercial halls, sold out.",
+    description: "22 apartments and two commercial halls beside Safari Villas, now sold out.",
     image: "/images/project-4.jpg",
     href: "/projects/madina-heights-3/",
     badge: "Sold Out",
@@ -85,7 +85,7 @@ const ITEMS: SeriesItem[] = [
     kind: "sold",
     title: "Madina Heights 2",
     meta: "Commercial + Apartments · Sector C",
-    description: "Sector-C side commercial — 18 apartments and six halls, completed 2023.",
+    description: "Completed in 2023 in Sector C, with 18 apartments and six commercial halls.",
     image: "/images/madina-heights-2/photo-06.jpeg",
     href: "/projects/madina-heights-2/",
     badge: "Sold Out",
@@ -97,7 +97,7 @@ const ITEMS: SeriesItem[] = [
     kind: "sold",
     title: "Madina Heights 1",
     meta: "Commercial + Apartments · Canal Bank Road",
-    description: "Main Canal Bank Road — 22 apartments and two commercial halls, handed over in 2021.",
+    description: "Handed over in 2021 on Main Canal Bank Road: 22 apartments and two commercial halls.",
     image: "/images/project-2.jpg",
     href: "/projects/madina-heights-1/",
     badge: "Sold Out",
@@ -164,7 +164,7 @@ export function HeightsSeries() {
         <div className="heights-page-hero__copy">
           <div className="max-w-xl">
             <p className="mb-3 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-[#f2e6d6]/90">
-              Madina Heights · Live now
+              Madina Heights · Booking now
             </p>
             <p className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#af522a]/70 bg-[#af522a] px-3 py-1 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[#fbf6ee]">
               <i className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#fbf6ee]" />
@@ -214,10 +214,10 @@ export function HeightsSeries() {
       >
         <header className="mb-8 text-center">
           <p className="eyebrow mb-2 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8c6239]">
-            Madina Heights — The collection
+            The Madina Heights buildings
           </p>
           <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] font-medium uppercase leading-[1.05] tracking-[-0.03em] text-[#1c1512]">
-            Every Madina Heights development in one <em className="italic font-normal">place.</em>
+            Every Madina Heights building, all in one <em className="italic font-normal">place.</em>
           </h2>
         </header>
 
@@ -270,7 +270,7 @@ export function HeightsSeries() {
 
         {visible.length === 0 ? (
           <p className="mt-8 text-center text-[#6e5c55]">
-            Nothing in this chapter. Try another filter.
+            No buildings match this filter. Try another one.
           </p>
         ) : null}
       </div>

@@ -34,7 +34,7 @@
       '<div class="models-3d-picker-copy">' +
       '<p class="models-3d-kicker" data-m3d-kicker></p>' +
       "<h2>View 3D models</h2>" +
-      '<p class="models-3d-hint">Choose a residence to explore in 3D. Drag to rotate, pinch or scroll to zoom.</p>' +
+      '<p class="models-3d-hint">Pick an apartment to view in 3D. Drag to turn it; pinch or scroll to zoom.</p>' +
       "</div>" +
       '<div class="models-3d-list" data-m3d-list></div>' +
       "</div>" +

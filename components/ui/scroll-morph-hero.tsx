@@ -200,10 +200,10 @@ export type IntroAnimationProps = {
 export default function IntroAnimation({
   items,
   className,
-  introTitle = "The full collection.",
-  introEyebrow = "Scroll to explore",
+  introTitle = "All our projects.",
+  introEyebrow = "Scroll down",
   eyebrow = "Our Projects",
-  activeBody = "Every development we have delivered in Lahore — plus Madina Mall & Residency, now live.",
+  activeBody = "All of our completed Lahore projects, plus Madina Mall & Residency, now booking.",
   onActiveChange,
 }: IntroAnimationProps) {
   const trackRef = useRef<HTMLDivElement>(null);

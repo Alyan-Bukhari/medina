@@ -95,9 +95,9 @@
       months: months,
       units: (function () {
         const labels = [
-          { id: "a", name: "Studio", area: 400, blurb: "Sample studio plate — confirm sizes and the written schedule at booking." },
-          { id: "b", name: "1 Bed", area: 550, blurb: "Sample one-bed plate — confirm sizes and the written schedule at booking." },
-          { id: "c", name: "2 Bed", area: 850, blurb: "Sample two-bed plate — confirm sizes and the written schedule at booking." }
+          { id: "a", name: "Studio", area: 400, blurb: "Indicative studio layout. Final sizes and schedule are confirmed in writing when you book." },
+          { id: "b", name: "1 Bed", area: 550, blurb: "Indicative one-bed layout. Final sizes and schedule are confirmed in writing when you book." },
+          { id: "c", name: "2 Bed", area: 850, blurb: "Indicative two-bed layout. Final sizes and schedule are confirmed in writing when you book." }
         ];
         const pool = uniqueImages(
           (project.gallery && project.gallery.length
@@ -152,7 +152,7 @@
       ],
       faqs: [
         {
-          q: "How do I get pricing?",
+          q: "How can I get current prices?",
           a: "WhatsApp or call 0312 4455477 for the issued schedule for " + project.name + "."
         },
         {
@@ -177,7 +177,7 @@
   function navHtml(hasCommercial, showPayment, showVideos) {
     const links = [
       ["overview", "Overview"],
-      ["residences", "Residences & Plans"]
+      ["residences", "Homes & Floor Plans"]
     ];
     if (hasCommercial) links.push(["commercial", "Commercial"]);
     if (showPayment) links.push(["plans", "Payment"]);
@@ -280,8 +280,8 @@
         (soldOut ? " dossier-archive" : "") +
         '">' +
         kickerHtml +
-        '<h2 class="display display-emphasis">From the air.</h2>' +
-        '<p class="dossier-note">Drone footage of the building and site.</p>' +
+        '<h2 class="display display-emphasis">Aerial view.</h2>' +
+        '<p class="dossier-note">Watch the building and site from above.</p>' +
         '<div class="dossier-videos">' +
         videoCards(videos) +
         "</div></div></section>"
@@ -297,7 +297,7 @@
         " is not published here yet. Our team can share current photography, a private briefing, and availability over WhatsApp.";
 
     const secondBtn = soldOut
-      ? '<a class="btn btn-outline" href="/projects/madina-mall-residency/">See live projects</a>'
+      ? '<a class="btn btn-outline" href="/projects/madina-mall-residency/">View available projects</a>'
       : '<a class="btn btn-outline" href="tel:03124455477">Call 0312 4455477</a>';
 
     return (
@@ -306,7 +306,7 @@
       '">' +
       kickerHtml +
       '<h2 class="display display-emphasis">' +
-      (soldOut ? "Archive media." : "Footage on request.") +
+      (soldOut ? "Archive media." : "Video available on request.") +
       "</h2>" +
       '<div class="dossier-video-empty">' +
       "<p>" +
@@ -315,7 +315,7 @@
       '<div class="dossier-video-empty-actions">' +
       '<a class="btn" href="' +
       esc(wa) +
-      '" target="_blank" rel="noopener noreferrer">WhatsApp the office</a>' +
+      '" target="_blank" rel="noopener noreferrer">Message us on WhatsApp</a>' +
       secondBtn +
       "</div></div></div></section>"
     );
@@ -346,7 +346,7 @@
       .join("");
 
     const priceBlock = showPayment
-      ? '<p class="unit-card-price">On request</p><p class="unit-card-sub">WhatsApp for schedule</p>'
+      ? '<p class="unit-card-price">On request</p><p class="unit-card-sub">Ask for the schedule</p>'
       : '<p class="unit-card-price">Sold out</p><p class="unit-card-sub">delivered project</p>';
 
     return (
@@ -430,7 +430,7 @@
       '" alt="' +
       esc(floor.name) +
       ' floor plan" loading="lazy"></button>' +
-      "<figcaption>Click to enlarge the blueprint</figcaption></figure></article>"
+      "<figcaption>Tap to view the full floor plan</figcaption></figure></article>"
     );
   }
 
@@ -459,11 +459,11 @@
         }
       ],
         notes: d.sample
-        ? ["Sample schedule for this page — confirm the issued plan at booking."]
+        ? ["Indicative schedule only. Your issued plan is confirmed when you book."]
         : [
-            "Percentages only · amounts on request at booking.",
-            "All areas are approx and gross.",
-            "All category charges that may apply will be applicable."
+            "Shown as percentages · ask our team for rupee amounts.",
+            "Areas are approximate gross figures.",
+            "Applicable category charges will be added."
           ]
     };
   }
@@ -565,7 +565,7 @@
                   )
                 : "https://wa.me/923124455477"
             ) +
-            '" target="_blank" rel="noopener noreferrer">Full schedule →</a></span>'
+            '" target="_blank" rel="noopener noreferrer">View schedule →</a></span>'
           );
         })
         .join("") +
@@ -578,8 +578,8 @@
       (sample ? ' data-base="sample"' : "") +
       ">" +
       (sample
-        ? "Sample figures for layout only · confirm the issued schedule at booking."
-        : "All figures in PKR · 1% construction-linked plan · areas approx and gross · schedules issued in writing at booking.") +
+        ? "Indicative figures only · final schedule issued at booking."
+        : "Prices in PKR · 1% construction-linked plan · approximate gross areas · written schedule provided at booking.") +
       "</p>"
     );
   }
@@ -713,9 +713,9 @@
       '<a class="btn" href="/projects/madina-mall-residency/">Madina Mall &amp; Residency</a>' +
       '<a class="btn btn-outline" href="' +
       esc(waLive) +
-      '" target="_blank" rel="noopener noreferrer">WhatsApp for live options</a>' +
+      '" target="_blank" rel="noopener noreferrer">Ask about available units</a>' +
       "</div></div></div>" +
-      '<h2 class="display display-emphasis">About the project.</h2>' +
+      '<h2 class="display display-emphasis">Project overview.</h2>' +
       '<p class="dossier-archive-copy">' +
       esc(copy) +
       "</p>" +
@@ -905,7 +905,7 @@
       (hasCommercial
         ? '<section class="dossier-block" id="commercial"><div class="wrap">' +
           kicker("Commercial") +
-          '<h2 class="display display-emphasis">Retail, floor by floor.</h2>' +
+          '<h2 class="display display-emphasis">Shops on every level.</h2>' +
           '<div class="floor-tabs" role="tablist">' +
           floorTabs +
           "</div>" +
@@ -924,7 +924,7 @@
       '<div class="wrap">' +
       kicker("Amenities") +
       '<h2 class="display display-emphasis">' +
-      (isMall ? "Built in, not bolted on." : "On the record.") +
+      (isMall ? "Amenities planned from day one." : "On the record.") +
       "</h2>" +
       '<div class="amenity-shots">' +
       amenityPhotos +
@@ -993,7 +993,7 @@
         " for overseas viewing · schedules issued in PKR · construction-linked, never rate-linked.";
     } else {
       foot.textContent =
-        "All figures in PKR · 1% construction-linked plan · areas approx and gross · schedules issued in writing at booking.";
+        "Prices in PKR · 1% construction-linked plan · approximate gross areas · written schedule provided at booking.";
     }
   }
 
